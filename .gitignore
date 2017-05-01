@@ -1,4 +1,9 @@
+*.dat
+*.cache
+
+
 # -*- mode: gitignore; -*-
+
 *~
 \#*\#
 /.emacs.desktop
