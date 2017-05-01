@@ -7,6 +7,17 @@
                          ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
 
+;;;set org variables
+(setq org-babel-load-languages
+ (quote
+  ((perl . t)
+   (emacs-lisp . t)
+   (c . t)
+   (shell . t)
+   (python . t)
+   (lisp . t)
+   )))
+
 
 ;;; auto-complete
 ;Enable  auto-complete
