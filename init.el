@@ -4,21 +4,11 @@
 ;;;initialize package
 (require 'package)
 (setq package-archives '(
-			 ;("gnu" . "https://elpa.gnu.org/packages/")
+			 ("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
-
-;;;set org variables
-(setq org-babel-load-languages
- (quote
-  ((perl . t)
-   (emacs-lisp . t)
-   (c . t)
-   (shell . t)
-   (python . t)
-   (lisp . t)
-   )))
-
+;(add-to-list 'load-path "~/.emacs.d/org-mode/lisp")
+;(add-to-list 'load-path "~/.emacs.d/org-mode/contrib/lisp" t)
 
 ;;; auto-complete
 ;Enable  auto-complete
@@ -73,3 +63,31 @@
 
 ;;start eide
 ;(eide-start)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-babel-load-languages
+   (quote
+    ((latex . t)
+     (org . t)
+     (makefile . t)
+     (matlab . t)
+     (python . t)
+     (perl . t)
+     (shell . t)
+     (C . t)
+     (java . t)
+     (js . t)
+     (awk . t)
+     (emacs-lisp . t))))
+ '(package-selected-packages
+   (quote
+    (ob-http ob-ipython ob-php xcode-mode window-numbering window-number window-layout web-mode w3m python iedit google-translate google-maps google-c-style flymake-shell flymake-json flymake-google-cpplint flymake-cursor eide ecb cedit auto-yasnippet auto-dictionary auto-complete-pcmp auto-complete-clang-async auto-complete-clang auto-complete-chunk auto-complete-c-headers auto-complete-auctex ac-math ac-ispell ac-html ac-helm ac-etags ac-clang ac-c-headers))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

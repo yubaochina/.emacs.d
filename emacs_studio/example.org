@@ -1,5 +1,3 @@
-#+STARTUP: showall
-
 * ORG
 ** Install
 sudo apt install org-mode
@@ -70,3 +68,4 @@ c-u c-c . : insert timestamp with time
 
 * Links
 - [[http:www.baidu.com][baidu]] : www.baidu.com  C-c C-l: edit the link
+
