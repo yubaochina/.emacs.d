@@ -1,0 +1,11 @@
+Emacs + ubuntu + Latex
+* Synopsis
+This document will introduce how to use Latex in Unbuntu
+** Installation in Ubuntu
+ sudo apt install texlive-full
+this will take about++ an hour
+** Installation el packages in Emacs
+;;Latex Config
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)

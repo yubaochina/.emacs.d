@@ -1,3 +1,4 @@
 #!/bin/sh
-#install auto complete
-sudo apt install auto-complete-el
+#install altex
+sudo apt install texlive-full
+sudo apt install auctex

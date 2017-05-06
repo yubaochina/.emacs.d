@@ -57,6 +57,13 @@ return "Hello world from python" #python comment
 #+RESULTS:
 : Hello world from python
 
+* Latex Mode
+
+#+BEGIN_SRC Latex
+\begin{equation}
+x=\sqrt{b}
+\end{equation}	
+#+END_SRC
 
 * Data and time. No time zone support
 C-c . : insert a timestamp
