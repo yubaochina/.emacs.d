@@ -1,0 +1,382 @@
+* Tutorial: how to use emacs
+** Frequency used shortcut key and very useful stuff
+   Manually Defined:
+- open recent files   
+C-x C-r [M-x recentf-open-files]: open recent files
+- How to input code block quickly "<s + TAB"
+Input "<s" and then type <TAB>
+
+#+BEGIN_SRC 
+
+#+END_SRC
+** Mode and Buffer Introduction
+- major mode: only one
+- minor mode: 0-n; for Example: tool-bar, scroll bar
+
+C-h m: look up all the enabled minor mode
+- help buffer
+** control command
+- c-g: quit
+- g: refresh the dired view of the current directory to see change
+  
+** Getting Help
+M-x find-fuction
+M-x find-variable
+C-h k: describe the function a key runs
+C-h f: describe a function
+C-h m: get mode-specific information, and this cna list the models currently used
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-h C-f") 'find-function)
+(global-set-key (kbd "C-h C-v") 'find-variable)
+(global-set-key (kbd "C-h C-k") 'find-function-on-key
+#+END_SRC
+
+** File and  Buffer commands
+- c-x c-f: open a file
+- c-x c-k: kill the buffer reprsenting a file .... not deleteing a file
+
+- C-x s: saves all fiels with a prompt
+- C-x C-s: saves file without a prompt
+- C-s C-w: saves the file with a different name. Askss you for the name
+
+- c-x b: switch to a different buffer in a window, asks you which buffer to swich to
+- C-x C-b: Switches buffers, but shows you the list of buffers in a new window
+
+  
+- m-<: begining of the buffer
+- m->: end of the file
+
+- M-x recover-file: recovers the auto-saved file
+- M-x write-file: write the buffer to a different file
+** Mouse move command
+*** word
+- c-f: move forward one character
+- c-b: move back one character
+- M-f: move forward one world
+- M-b: move back one world
+*** line
+- c-p: previous line/up
+- c-n: next line/down
+- c-a: move to the beginning of the a line
+- c-e: move to the end of the line
+*** page
+- c-v: gage down
+- m-v: page up
+*** screen
+- c-l: center the screen
+
+** Edit command
+- c-d: delete a character
+- m-d: delete a word
+
+- c-_: undo
+- c-/: undo
+- C-g c-/: Redo
+
+- c-w: cut
+- c-y: yandk/paste
+
+- m-u: upper case
+- m-l: lower case
+- m-c: capitalize
+
+** Multiple Windos
+- C-M-v: scroll other window   
+- c-x 2: split top/down
+- c-x 3: split left/right
+- c-x o: other window
+
+** search
+- c-s text: search
+- c-s TEXT: case sensitive search
+- m-x query-replace <----> m-%
+- m-x replace-string
+
+- M-C-s: search a regexp
+
+- M-s o: searches and shows alll the occurances in an *Occur* buffer. You can click on the lines to jump to those lines.
+
+- m-x grep <enter>
+
+** mark
+- c-space: start/toggle marking a region
+
+** check
+
+- m-$: spell check word
+- m-x flyspell-mode
+- m-x ispell-region: check a small region
+- m-x ispell-buffer: check all of the buffer
+
+** shell
+- m-x shell: start a bash command line
+
+** Customize variavle, group, mode, function
+   
+* Configuration for project and IDE
+** Package Management
+- Introduction
+MELPA: Milkypostman's Emacs Lisp Package Archives
+- M-x  package-list-packages
+d: delete
+i: install
+x: execute
+- [[https://melpa.org/][melpa.org]]
+- Add melpa package
+#+BEGIN_SRC  emacs-lisp
+  ;;;initialize package
+  (require 'package)
+  (setq package-archives '(
+  ;			 ("gnu" . "https://elpa.gnu.org/packages/")
+;			   ("melpa" . "https://melpa.org/packages/")
+			   ("melpa-stable" . "https:://stable.melpa.org/packages/"))
+  )
+  (package-initialize)
+#+END_SRC
+- Auto install package configuration
+  #+BEGIN_SRC emacs-lisp
+
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives  '(
+				    ("melpa" . "https://melpa.org/packages/"))))
+(require 'cl)
+;;add whatever package you want here
+(defvar yubao/packages '(
+			 company
+			 )
+  "Default packages")
+(defun yubao/packages-installed-p ()
+  (loop for pkg in yubao/packages
+	when (not (package-installed-p pkg)) do (return nil)
+	finally (return t)))
+
+(unless (yubao/packages-installed-p)
+  (message "%s" "Refreshing package database .... ")
+  (package-refresh-contents)
+  (dolist (pkg yubao/packages)
+    (when (not (package-installed-p pkg))
+      (package-install pkg))))
+  #+END_SRC
+** linum Mode
+(global-linum-mode t)
+(linum-mode t)
+
+** Company Mode
+- [[http://company-mode.github.io/][company-mode]]   
+- What's Company Mode?
+Company => company anything
+- How to enable company mode?
+
+(company-mode t);work on current buffer
+(global-company-mode t);work on all the opened buffer
+
+Use M-n or M-p to select candidate item
+** Speedbar
+  m-x speedbar <enter> or m-x speed <tab> <enter> :list project files
+** Compile
+  m-x compile
+** Debug
+  c-x ` : jump to the next error. That ` is a back quote on the top left of the keyboard
+** Format
+- Auto Update the Sequence Number
+Example:
+1. first
+2. second
+3. third
+4. fourth
+
+Then I want to insert one item:   
+Example:
+1. first
+2. second
+3. Inserted new item
+3. third
+4. fourth
+
+Therefore, think a question: how to auto sort the list?
+
+Method:
+
+Move the curser to the end, and press 'M' (meta), and then press Return key.
+
+Sorted items:
+1. first
+2. second
+3. Inserted new item
+4. third
+5. fourth
+
+7. Indent
+   M-x indent-gegion: indents the region
+** Show match parents "()"
+[menu]=>[Options]=>[Highlight Matching Parentheses]
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+#+END_SRC
+** Highlight current line
+#+BEGIN_SRC emacs-lisp
+  (global-hl-line-mode t)
+#+END_SRC
+** Disable backup file (*.~)
+#+BEGIN_SRC emacs-lisp
+;;disable backup file (*.~)
+(setq make-backup-files nil)
+#+END_SRC
+** Enable Recent Files
+#+BEGIN_SRC emacs-lisp
+     (require 'recentf)
+     (recentf-mode t)
+     (setq recentf-max-menu-items 25)
+     ;;uncomment this statement if u want to use shortcut key
+     (global-set-key "\C-x\ \C-r" 'recentf-open-files)
+#+END_SRC
+** Delete Selection Mode
+#+BEGIN_SRC emacs-lisp
+;;add delete selection mode
+(delete-selection-mode t)
+#+END_SRC
+
+** Install Hungary Delete mode
+   #+BEGIN_SRC emacs-lisp
+   ;;config hungry-delete mode
+   (require 'hungry-delete)
+   (global-hungry-delete-mode)
+   #+END_SRC
+** Install a Theme
+#+BEGIN_SRC emacs-lisp
+  (load-theme 'monokai t)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(require 'smex) ; Not needed if you use package.el
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+#+END_SRC
+** Install swiper and counsel
+- [[https://github.com/abo-abo/swiper][swiper]]
+- configuration  
+  #+BEGIN_SRC emacs-lisp
+  (ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
+  #+END_SRC
+** Install and Configure Smartparens mode
+- Install
+  [[https://github.com/Fuco1/smartparens#getting-started][samartparents]]
+- Configure     
+#+BEGIN_SRC emacs-lisp
+(require 'smartparens-config)
+(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
+#+END_SRC
+** Configure Javascript IDE
+- install js2-mode in Emacs
+- Configuration js2-mode
+Thde default mode is "javascript mode", use this to change to Javascript IDE:
+#+BEGIN_SRC 
+;;configure for js2-mode
+(setq auto-mode-alist
+      (append
+       '(("\\.js\\'" . js2-mode))
+auto-mode-alist))
+#+END_SRC
+- Install nodejs in OS
+- Install nodejs-repl
+- Configure nodejs-repl
+  set nodejs-repl-command to "nodejs" in ubuntu system
+#+BEGIN_SRC emacs-lisp
+;Type M-x nodejs-repl to run Node.js REPL. See also comint-mode to check key bindings.
+;You can define key bindings to send JavaScript codes to REPL like below:
+
+(add-hook 'js-mode-hook
+          (lambda ()
+            (define-key js-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-sexp)
+            (define-key js-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
+            (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
+            (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))	    
+
+#+END_SRC  
+* org-mode basics
+** Introduction and Common Configuration
+*** How to enter source code edit mode
+- C-c ' (C-c and single quote) to enter into the source code edit mode, and then use it to turn back
+- C-c C-k to abort
+- Example:
+#+BEGIN_SRC emacs-lisp
+;;press "C-c ' " to edit source code
+  (message "Emacs lisp")
+#+END_SRC
+** Schedule and Calenda and Todo
+- TODO creating todo and donw items
+
+shift-RightArrow or C-c C-t: togle TODO state
+- C-c C-s: to schedule time
+- C-c C-d: to set deadline of time
+- C-c a: lookup the schedual
+*** TODO todo
+*** DONE done
+** Links
+- [[http:www.baidu.com][baidu]] : www.baidu.com  C-c C-l: edit the link
+
+* Emacs Lisp
+** Study Resources
+- [[https://learnxinyminutes.com/][learnxinyminutes]]
+** Command  
+- M-: -> :to go to the evaluate buffer where you can evaluate a lisp statement.
+For example, "setq" sets a variable to a value: (setq your\_var '123)
+
+- M-x ielm : ELISP, describe-mode for help
+- C-x C-e:  runs the command eval-last-sexp (found in global-map)
+- M-x eval-buffer :run commands on the current buffer
+** Elisp Grammer
+*** Example
+    #+BEGIN_SRC emacs-lisp
+    ;;set a variable
+    (setq my-name "yubao")
+
+    ;;show the variable's value
+    (message my-name)
+
+    ;;define a func to show my name
+    (defun showMyName ()
+    (interactive);M-x call
+    (message "Hello, %s" my-name)
+    )
+
+    ;;call "showMyName" fuction
+    (showMyName)
+    
+    ;;how to bind the key
+    (global-set-key (kbd "<C-f2>") 'showMyName)
+    
+    #+END_SRC
+    
+*** Variable
+
+*** Function   
+
+   (+ 2 2)
+p
+* Reference
+- [[http://book.emacs-china.org/][MasterEmacsIn21Days]]
+- [[https://learnxinyminutes.com/][learnxinyminutes]]

@@ -1,4 +1,6 @@
 #Tutorial: emacs keyboard instruction  
+c-h t: open emacs tutorial
+
 ##Foundamental command
 c-g: quit
 c-x c-f: open a file

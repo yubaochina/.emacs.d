@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-05-07 Sun 23:39 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="yubao" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd5b90d1">1. Tutorial: how to use emacs</a>
+<ul>
+<li><a href="#org3b4040c">1.1. Frequency used shortcut key and very useful stuff</a></li>
+<li><a href="#orgef6081a">1.2. Mode and Buffer Introduction</a></li>
+<li><a href="#org9bb99cb">1.3. control command</a></li>
+<li><a href="#orgf33b246">1.4. Getting Help</a></li>
+<li><a href="#org0dc932f">1.5. File and  Buffer commands</a></li>
+<li><a href="#org8539a19">1.6. Mouse move command</a>
+<ul>
+<li><a href="#orgc57b8ad">1.6.1. word</a></li>
+<li><a href="#orgc94f097">1.6.2. line</a></li>
+<li><a href="#org0efcd55">1.6.3. page</a></li>
+<li><a href="#org87acd3c">1.6.4. screen</a></li>
+</ul>
+</li>
+<li><a href="#org541f07f">1.7. Edit command</a></li>
+<li><a href="#orgfc143b4">1.8. Multiple Windos</a></li>
+<li><a href="#orgf9c2cd4">1.9. search</a></li>
+<li><a href="#orgac3f6e0">1.10. mark</a></li>
+<li><a href="#org5ae2b47">1.11. check</a></li>
+<li><a href="#orgcc8c7d0">1.12. shell</a></li>
+<li><a href="#orgc5775ca">1.13. Customize variavle, group, mode, function</a></li>
+</ul>
+</li>
+<li><a href="#orgbb95ca6">2. Configuration for project and IDE</a>
+<ul>
+<li><a href="#org940ee48">2.1. Package Management</a></li>
+<li><a href="#orgef27b20">2.2. linum Mode</a></li>
+<li><a href="#org9f488b4">2.3. Company Mode</a></li>
+<li><a href="#org56d71ba">2.4. Speedbar</a></li>
+<li><a href="#org9b722f4">2.5. Compile</a></li>
+<li><a href="#orga3128cb">2.6. Debug</a></li>
+<li><a href="#org7acaa37">2.7. Format</a></li>
+<li><a href="#orgea4159f">2.8. Show match parents "()"</a></li>
+<li><a href="#org75af25c">2.9. Highlight current line</a></li>
+<li><a href="#orgcd7cee8">2.10. Disable backup file (*.~)</a></li>
+<li><a href="#org3fc6b4a">2.11. Enable Recent Files</a></li>
+<li><a href="#orgcfc38da">2.12. Delete Selection Mode</a></li>
+<li><a href="#org44e793e">2.13. Install Hungary Delete mode</a></li>
+<li><a href="#orga4c20d4">2.14. Install a Theme</a></li>
+<li><a href="#orgbcda61b">2.15. Install swiper and counsel</a></li>
+<li><a href="#org630e8a0">2.16. Install and Configure Smartparens mode</a></li>
+<li><a href="#org937b1b2">2.17. Configure Javascript IDE</a></li>
+</ul>
+</li>
+<li><a href="#org4f37092">3. org-mode basics</a>
+<ul>
+<li><a href="#org5343615">3.1. Introduction and Common Configuration</a>
+<ul>
+<li><a href="#org365e2db">3.1.1. How to enter source code edit mode</a></li>
+</ul>
+</li>
+<li><a href="#org922759c">3.2. Schedule and Calenda and Todo</a>
+<ul>
+<li><a href="#orgdfb5a84">3.2.1. <span class="todo TODO">TODO</span> todo</a></li>
+<li><a href="#org66e7474">3.2.2. <span class="done DONE">DONE</span> done</a></li>
+</ul>
+</li>
+<li><a href="#org3214647">3.3. Links</a></li>
+</ul>
+</li>
+<li><a href="#org8638a36">4. Emacs Lisp</a>
+<ul>
+<li><a href="#org2063eba">4.1. Study Resources</a></li>
+<li><a href="#org29a9910">4.2. Command</a></li>
+<li><a href="#orgc94da6e">4.3. Elisp Grammer</a>
+<ul>
+<li><a href="#org54e8be7">4.3.1. Example</a></li>
+<li><a href="#orgee984b1">4.3.2. Variable</a></li>
+<li><a href="#org21c148e">4.3.3. Function</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf8ab219">5. Reference</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd5b90d1" class="outline-2">
+<h2 id="orgd5b90d1"><span class="section-number-2">1</span> Tutorial: how to use emacs</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-org3b4040c" class="outline-3">
+<h3 id="org3b4040c"><span class="section-number-3">1.1</span> Frequency used shortcut key and very useful stuff</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Manually Defined:
+</p>
+<ul class="org-ul">
+<li>open recent files</li>
+</ul>
+<p>
+C-x C-r [M-x recentf-open-files]: open recent files
+</p>
+<ul class="org-ul">
+<li>How to input code block quickly "&lt;s + TAB"</li>
+</ul>
+<p>
+Input "&lt;s" and then type &lt;TAB&gt;
+</p>
+
+<pre class="example">
+
+</pre>
+</div>
+</div>
+<div id="outline-container-orgef6081a" class="outline-3">
+<h3 id="orgef6081a"><span class="section-number-3">1.2</span> Mode and Buffer Introduction</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>major mode: only one</li>
+<li>minor mode: 0-n; for Example: tool-bar, scroll bar</li>
+</ul>
+
+<p>
+C-h m: look up all the enabled minor mode
+</p>
+<ul class="org-ul">
+<li>help buffer</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9bb99cb" class="outline-3">
+<h3 id="org9bb99cb"><span class="section-number-3">1.3</span> control command</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>c-g: quit</li>
+<li>g: refresh the dired view of the current directory to see change</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf33b246" class="outline-3">
+<h3 id="orgf33b246"><span class="section-number-3">1.4</span> Getting Help</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+M-x find-fuction
+M-x find-variable
+C-h k: describe the function a key runs
+C-h f: describe a function
+C-h m: get mode-specific information, and this cna list the models currently used
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(global-set-key (kbd "C-h C-f") 'find-function)
+(global-set-key (kbd "C-h C-v") 'find-variable)
+(global-set-key (kbd "C-h C-k") 'find-function-on-key
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0dc932f" class="outline-3">
+<h3 id="org0dc932f"><span class="section-number-3">1.5</span> File and  Buffer commands</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>c-x c-f: open a file</li>
+<li>c-x c-k: kill the buffer reprsenting a file &#x2026;. not deleteing a file</li>
+
+<li>C-x s: saves all fiels with a prompt</li>
+<li>C-x C-s: saves file without a prompt</li>
+<li>C-s C-w: saves the file with a different name. Askss you for the name</li>
+
+<li>c-x b: switch to a different buffer in a window, asks you which buffer to swich to</li>
+<li>C-x C-b: Switches buffers, but shows you the list of buffers in a new window</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>m-&lt;: begining of the buffer</li>
+<li>m-&gt;: end of the file</li>
+
+<li>M-x recover-file: recovers the auto-saved file</li>
+<li>M-x write-file: write the buffer to a different file</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8539a19" class="outline-3">
+<h3 id="org8539a19"><span class="section-number-3">1.6</span> Mouse move command</h3>
+<div class="outline-text-3" id="text-1-6">
+</div><div id="outline-container-orgc57b8ad" class="outline-4">
+<h4 id="orgc57b8ad"><span class="section-number-4">1.6.1</span> word</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<ul class="org-ul">
+<li>c-f: move forward one character</li>
+<li>c-b: move back one character</li>
+<li>M-f: move forward one world</li>
+<li>M-b: move back one world</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc94f097" class="outline-4">
+<h4 id="orgc94f097"><span class="section-number-4">1.6.2</span> line</h4>
+<div class="outline-text-4" id="text-1-6-2">
+<ul class="org-ul">
+<li>c-p: previous line/up</li>
+<li>c-n: next line/down</li>
+<li>c-a: move to the beginning of the a line</li>
+<li>c-e: move to the end of the line</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0efcd55" class="outline-4">
+<h4 id="org0efcd55"><span class="section-number-4">1.6.3</span> page</h4>
+<div class="outline-text-4" id="text-1-6-3">
+<ul class="org-ul">
+<li>c-v: gage down</li>
+<li>m-v: page up</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org87acd3c" class="outline-4">
+<h4 id="org87acd3c"><span class="section-number-4">1.6.4</span> screen</h4>
+<div class="outline-text-4" id="text-1-6-4">
+<ul class="org-ul">
+<li>c-l: center the screen</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org541f07f" class="outline-3">
+<h3 id="org541f07f"><span class="section-number-3">1.7</span> Edit command</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>c-d: delete a character</li>
+<li>m-d: delete a word</li>
+
+<li>c-_: undo</li>
+<li>c-/: undo</li>
+<li>C-g c-/: Redo</li>
+
+<li>c-w: cut</li>
+<li>c-y: yandk/paste</li>
+
+<li>m-u: upper case</li>
+<li>m-l: lower case</li>
+<li>m-c: capitalize</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfc143b4" class="outline-3">
+<h3 id="orgfc143b4"><span class="section-number-3">1.8</span> Multiple Windos</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>C-M-v: scroll other window</li>
+<li>c-x 2: split top/down</li>
+<li>c-x 3: split left/right</li>
+<li>c-x o: other window</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf9c2cd4" class="outline-3">
+<h3 id="orgf9c2cd4"><span class="section-number-3">1.9</span> search</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>c-s text: search</li>
+<li>c-s TEXT: case sensitive search</li>
+<li>m-x query-replace &lt;-&#x2014;&gt; m-%</li>
+<li>m-x replace-string</li>
+
+<li>M-C-s: search a regexp</li>
+
+<li>M-s o: searches and shows alll the occurances in an <b>Occur</b> buffer. You can click on the lines to jump to those lines.</li>
+
+<li>m-x grep &lt;enter&gt;</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgac3f6e0" class="outline-3">
+<h3 id="orgac3f6e0"><span class="section-number-3">1.10</span> mark</h3>
+<div class="outline-text-3" id="text-1-10">
+<ul class="org-ul">
+<li>c-space: start/toggle marking a region</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5ae2b47" class="outline-3">
+<h3 id="org5ae2b47"><span class="section-number-3">1.11</span> check</h3>
+<div class="outline-text-3" id="text-1-11">
+<ul class="org-ul">
+<li>m-$: spell check word</li>
+<li>m-x flyspell-mode</li>
+<li>m-x ispell-region: check a small region</li>
+<li>m-x ispell-buffer: check all of the buffer</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcc8c7d0" class="outline-3">
+<h3 id="orgcc8c7d0"><span class="section-number-3">1.12</span> shell</h3>
+<div class="outline-text-3" id="text-1-12">
+<ul class="org-ul">
+<li>m-x shell: start a bash command line</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc5775ca" class="outline-3">
+<h3 id="orgc5775ca"><span class="section-number-3">1.13</span> Customize variavle, group, mode, function</h3>
+</div>
+</div>
+
+<div id="outline-container-orgbb95ca6" class="outline-2">
+<h2 id="orgbb95ca6"><span class="section-number-2">2</span> Configuration for project and IDE</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-org940ee48" class="outline-3">
+<h3 id="org940ee48"><span class="section-number-3">2.1</span> Package Management</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Introduction</li>
+</ul>
+<p>
+MELPA: Milkypostman's Emacs Lisp Package Archives
+</p>
+<ul class="org-ul">
+<li>M-x  package-list-packages</li>
+</ul>
+<p>
+d: delete
+i: install
+x: execute
+</p>
+<ul class="org-ul">
+<li><a href="https://melpa.org/">melpa.org</a></li>
+<li>Add melpa package</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  ;;;initialize package
+  (require 'package)
+  (setq package-archives '(
+  ;			 ("gnu" . "https://elpa.gnu.org/packages/")
+;			   ("melpa" . "https://melpa.org/packages/")
+			   ("melpa-stable" . "https:://stable.melpa.org/packages/"))
+  )
+  (package-initialize)
+</pre>
+</div>
+<ul class="org-ul">
+<li><p>
+Auto install package configuration
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+(when (&gt;= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives  '(
+				    ("melpa" . "https://melpa.org/packages/"))))
+(require 'cl)
+;;add whatever package you want here
+(defvar yubao/packages '(
+			 company
+			 )
+  "Default packages")
+(defun yubao/packages-installed-p ()
+  (loop for pkg in yubao/packages
+	when (not (package-installed-p pkg)) do (return nil)
+	finally (return t)))
+
+(unless (yubao/packages-installed-p)
+  (message "%s" "Refreshing package database .... ")
+  (package-refresh-contents)
+  (dolist (pkg yubao/packages)
+    (when (not (package-installed-p pkg))
+      (package-install pkg))))
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgef27b20" class="outline-3">
+<h3 id="orgef27b20"><span class="section-number-3">2.2</span> linum Mode</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+(global-linum-mode t)
+(linum-mode t)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9f488b4" class="outline-3">
+<h3 id="org9f488b4"><span class="section-number-3">2.3</span> Company Mode</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li><a href="http://company-mode.github.io/">company-mode</a></li>
+<li>What's Company Mode?</li>
+</ul>
+<p>
+Company =&gt; company anything
+</p>
+<ul class="org-ul">
+<li>How to enable company mode?</li>
+</ul>
+
+<p>
+(company-mode t);work on current buffer
+(global-company-mode t);work on all the opened buffer
+</p>
+
+<p>
+Use M-n or M-p to select candidate item
+</p>
+</div>
+</div>
+<div id="outline-container-org56d71ba" class="outline-3">
+<h3 id="org56d71ba"><span class="section-number-3">2.4</span> Speedbar</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+m-x speedbar &lt;enter&gt; or m-x speed &lt;tab&gt; &lt;enter&gt; :list project files
+</p>
+</div>
+</div>
+<div id="outline-container-org9b722f4" class="outline-3">
+<h3 id="org9b722f4"><span class="section-number-3">2.5</span> Compile</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+m-x compile
+</p>
+</div>
+</div>
+<div id="outline-container-orga3128cb" class="outline-3">
+<h3 id="orga3128cb"><span class="section-number-3">2.6</span> Debug</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+c-x ` : jump to the next error. That ` is a back quote on the top left of the keyboard
+</p>
+</div>
+</div>
+<div id="outline-container-org7acaa37" class="outline-3">
+<h3 id="org7acaa37"><span class="section-number-3">2.7</span> Format</h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li>Auto Update the Sequence Number</li>
+</ul>
+<p>
+Example:
+</p>
+<ol class="org-ol">
+<li>first</li>
+<li>second</li>
+<li>third</li>
+<li>fourth</li>
+</ol>
+
+<p>
+Then I want to insert one item:   
+Example:
+</p>
+<ol class="org-ol">
+<li>first</li>
+<li>second</li>
+<li>Inserted new item</li>
+<li>third</li>
+<li>fourth</li>
+</ol>
+
+<p>
+Therefore, think a question: how to auto sort the list?
+</p>
+
+<p>
+Method:
+</p>
+
+<p>
+Move the curser to the end, and press 'M' (meta), and then press Return key.
+</p>
+
+<p>
+Sorted items:
+</p>
+<ol class="org-ol">
+<li>first</li>
+<li>second</li>
+<li>Inserted new item</li>
+<li>third</li>
+<li>fourth</li>
+
+<li>Indent
+M-x indent-gegion: indents the region</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgea4159f" class="outline-3">
+<h3 id="orgea4159f"><span class="section-number-3">2.8</span> Show match parents "()"</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+[menu]=&gt;[Options]=&gt;[Highlight Matching Parentheses]
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org75af25c" class="outline-3">
+<h3 id="org75af25c"><span class="section-number-3">2.9</span> Highlight current line</h3>
+<div class="outline-text-3" id="text-2-9">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(global-hl-line-mode t)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcd7cee8" class="outline-3">
+<h3 id="orgcd7cee8"><span class="section-number-3">2.10</span> Disable backup file (*.~)</h3>
+<div class="outline-text-3" id="text-2-10">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;;disable backup file (*.~)
+(setq make-backup-files nil)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3fc6b4a" class="outline-3">
+<h3 id="org3fc6b4a"><span class="section-number-3">2.11</span> Enable Recent Files</h3>
+<div class="outline-text-3" id="text-2-11">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(require 'recentf)
+(recentf-mode t)
+(setq recentf-max-menu-items 25)
+;;uncomment this statement if u want to use shortcut key
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcfc38da" class="outline-3">
+<h3 id="orgcfc38da"><span class="section-number-3">2.12</span> Delete Selection Mode</h3>
+<div class="outline-text-3" id="text-2-12">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;;add delete selection mode
+(delete-selection-mode t)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org44e793e" class="outline-3">
+<h3 id="org44e793e"><span class="section-number-3">2.13</span> Install Hungary Delete mode</h3>
+<div class="outline-text-3" id="text-2-13">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;;config hungry-delete mode
+(require 'hungry-delete)
+(global-hungry-delete-mode)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga4c20d4" class="outline-3">
+<h3 id="orga4c20d4"><span class="section-number-3">2.14</span> Install a Theme</h3>
+<div class="outline-text-3" id="text-2-14">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(load-theme 'monokai t)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(require 'smex) ; Not needed if you use package.el
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbcda61b" class="outline-3">
+<h3 id="orgbcda61b"><span class="section-number-3">2.15</span> Install swiper and counsel</h3>
+<div class="outline-text-3" id="text-2-15">
+<ul class="org-ul">
+<li><a href="https://github.com/abo-abo/swiper">swiper</a></li>
+<li><p>
+configuration  
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">  (ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "&lt;f6&gt;") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "&lt;f1&gt; f") 'counsel-describe-function)
+(global-set-key (kbd "&lt;f1&gt; v") 'counsel-describe-variable)
+(global-set-key (kbd "&lt;f1&gt; l") 'counsel-find-library)
+(global-set-key (kbd "&lt;f2&gt; i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "&lt;f2&gt; u") 'counsel-unicode-char)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org630e8a0" class="outline-3">
+<h3 id="org630e8a0"><span class="section-number-3">2.16</span> Install and Configure Smartparens mode</h3>
+<div class="outline-text-3" id="text-2-16">
+<ul class="org-ul">
+<li>Install
+<a href="https://github.com/Fuco1/smartparens#getting-started">samartparents</a></li>
+<li>Configure</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(require 'smartparens-config)
+(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org937b1b2" class="outline-3">
+<h3 id="org937b1b2"><span class="section-number-3">2.17</span> Configure Javascript IDE</h3>
+<div class="outline-text-3" id="text-2-17">
+<ul class="org-ul">
+<li>install js2-mode in Emacs</li>
+<li>Configuration js2-mode</li>
+</ul>
+<p>
+Thde default mode is "javascript mode", use this to change to Javascript IDE:
+</p>
+<pre class="example">
+;;configure for js2-mode
+(setq auto-mode-alist
+      (append
+       '(("\\.js\\'" . js2-mode))
+auto-mode-alist))
+</pre>
+<ul class="org-ul">
+<li>Install nodejs in OS</li>
+<li>Install nodejs-repl</li>
+<li>Configure nodejs-repl
+set nodejs-repl-command to "nodejs" in ubuntu system</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;Type M-x nodejs-repl to run Node.js REPL. See also comint-mode to check key bindings.
+;You can define key bindings to send JavaScript codes to REPL like below:
+
+(add-hook 'js-mode-hook
+	  (lambda ()
+	    (define-key js-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-sexp)
+	    (define-key js-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
+	    (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
+	    (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))	    
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org4f37092" class="outline-2">
+<h2 id="org4f37092"><span class="section-number-2">3</span> org-mode basics</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-org5343615" class="outline-3">
+<h3 id="org5343615"><span class="section-number-3">3.1</span> Introduction and Common Configuration</h3>
+<div class="outline-text-3" id="text-3-1">
+</div><div id="outline-container-org365e2db" class="outline-4">
+<h4 id="org365e2db"><span class="section-number-4">3.1.1</span> How to enter source code edit mode</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>C-c ' (C-c and single quote) to enter into the source code edit mode, and then use it to turn back</li>
+<li>C-c C-k to abort</li>
+<li>Example:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;;press "C-c ' " to edit source code
+  (message "Emacs lisp")
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org922759c" class="outline-3">
+<h3 id="org922759c"><span class="section-number-3">3.2</span> Schedule and Calenda and Todo</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>TODO creating todo and donw items</li>
+</ul>
+
+<p>
+shift-RightArrow or C-c C-t: togle TODO state
+</p>
+<ul class="org-ul">
+<li>C-c C-s: to schedule time</li>
+<li>C-c C-d: to set deadline of time</li>
+<li>C-c a: lookup the schedual</li>
+</ul>
+</div>
+<div id="outline-container-orgdfb5a84" class="outline-4">
+<h4 id="orgdfb5a84"><span class="section-number-4">3.2.1</span> <span class="todo TODO">TODO</span> todo</h4>
+</div>
+<div id="outline-container-org66e7474" class="outline-4">
+<h4 id="org66e7474"><span class="section-number-4">3.2.2</span> <span class="done DONE">DONE</span> done</h4>
+</div>
+</div>
+<div id="outline-container-org3214647" class="outline-3">
+<h3 id="org3214647"><span class="section-number-3">3.3</span> Links</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li><a href="http:www.baidu.com">baidu</a> : www.baidu.com  C-c C-l: edit the link</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8638a36" class="outline-2">
+<h2 id="org8638a36"><span class="section-number-2">4</span> Emacs Lisp</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-org2063eba" class="outline-3">
+<h3 id="org2063eba"><span class="section-number-3">4.1</span> Study Resources</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li><a href="https://learnxinyminutes.com/">learnxinyminutes</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org29a9910" class="outline-3">
+<h3 id="org29a9910"><span class="section-number-3">4.2</span> Command</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>M-: -&gt; :to go to the evaluate buffer where you can evaluate a lisp statement.</li>
+</ul>
+<p>
+For example, "setq" sets a variable to a value: (setq your\<sub>var</sub> '123)
+</p>
+
+<ul class="org-ul">
+<li>M-x ielm : ELISP, describe-mode for help</li>
+<li>C-x C-e:  runs the command eval-last-sexp (found in global-map)</li>
+<li>M-x eval-buffer :run commands on the current buffer</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc94da6e" class="outline-3">
+<h3 id="orgc94da6e"><span class="section-number-3">4.3</span> Elisp Grammer</h3>
+<div class="outline-text-3" id="text-4-3">
+</div><div id="outline-container-org54e8be7" class="outline-4">
+<h4 id="org54e8be7"><span class="section-number-4">4.3.1</span> Example</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;;set a variable
+(setq my-name "yubao")
+
+;;show the variable's value
+(message my-name)
+
+;;define a func to show my name
+(defun showMyName ()
+(interactive);M-x call
+(message "Hello, %s" my-name)
+)
+
+;;call "showMyName" fuction
+(showMyName)
+
+;;how to bind the key
+(global-set-key (kbd "&lt;C-f2&gt;") 'showMyName)
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgee984b1" class="outline-4">
+<h4 id="orgee984b1"><span class="section-number-4">4.3.2</span> Variable</h4>
+</div>
+
+<div id="outline-container-org21c148e" class="outline-4">
+<h4 id="org21c148e"><span class="section-number-4">4.3.3</span> Function</h4>
+<div class="outline-text-4" id="text-4-3-3">
+<p>
+   (+ 2 2)
+p
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf8ab219" class="outline-2">
+<h2 id="orgf8ab219"><span class="section-number-2">5</span> Reference</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li><a href="http://book.emacs-china.org/">MasterEmacsIn21Days</a></li>
+<li><a href="https://learnxinyminutes.com/">learnxinyminutes</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: yubao</p>
+<p class="date">Created: 2017-05-07 Sun 23:39</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
