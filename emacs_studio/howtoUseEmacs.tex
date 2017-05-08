@@ -1,0 +1,538 @@
+% Created 2017-05-08 Mon 01:28
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{yubao}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={yubao},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.1.1 (Org mode 9.0.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{Tutorial: how to use emacs}
+\label{sec:orgb93ef2e}
+\subsection{Frequency used shortcut key and very useful stuff}
+\label{sec:org8567fcb}
+Manually Defined:
+\begin{itemize}
+\item open recent files
+\end{itemize}
+C-x C-r [M-x recentf-open-files]: open recent files
+\begin{itemize}
+\item How to input code block quickly "<s + TAB"
+\end{itemize}
+Input "<s" and then type <TAB>
+\subsection{Mode and Buffer Introduction}
+\label{sec:orge18ab9f}
+\begin{itemize}
+\item major mode: only one
+\item minor mode: 0-n; for Example: tool-bar, scroll bar
+\end{itemize}
+
+C-h m: look up all the enabled minor mode
+\begin{itemize}
+\item help buffer
+\end{itemize}
+\subsection{control command}
+\label{sec:org0bab889}
+\begin{itemize}
+\item c-g: quit
+\item g: refresh the dired view of the current directory to see change
+\end{itemize}
+
+\subsection{Getting Help}
+\label{sec:org98903d2}
+M-x find-fuction
+M-x find-variable
+C-h k: describe the function a key runs
+C-h f: describe a function
+C-h m: get mode-specific information, and this cna list the models currently used
+\begin{verbatim}
+(global-set-key (kbd "C-h C-f") 'find-function)
+(global-set-key (kbd "C-h C-v") 'find-variable)
+(global-set-key (kbd "C-h C-k") 'find-function-on-key
+\end{verbatim}
+
+\subsection{File and  Buffer commands}
+\label{sec:orge14e87e}
+\begin{itemize}
+\item c-x c-f: open a file
+\item c-x c-k: kill the buffer reprsenting a file \ldots{}. not deleteing a file
+
+\item C-x s: saves all fiels with a prompt
+\item C-x C-s: saves file without a prompt
+\item C-s C-w: saves the file with a different name. Askss you for the name
+
+\item c-x b: switch to a different buffer in a window, asks you which buffer to swich to
+\item C-x C-b: Switches buffers, but shows you the list of buffers in a new window
+\end{itemize}
+
+
+\begin{itemize}
+\item m-<: begining of the buffer
+\item m->: end of the file
+
+\item M-x recover-file: recovers the auto-saved file
+\item M-x write-file: write the buffer to a different file
+\end{itemize}
+\subsection{Mouse move command}
+\label{sec:org745ba2a}
+\subsubsection{word}
+\label{sec:org7f30348}
+\begin{itemize}
+\item c-f: move forward one character
+\item c-b: move back one character
+\item M-f: move forward one world
+\item M-b: move back one world
+\end{itemize}
+\subsubsection{line}
+\label{sec:orgac9fbf8}
+\begin{itemize}
+\item c-p: previous line/up
+\item c-n: next line/down
+\item c-a: move to the beginning of the a line
+\item c-e: move to the end of the line
+\end{itemize}
+\subsubsection{page}
+\label{sec:orgdf84813}
+\begin{itemize}
+\item c-v: gage down
+\item m-v: page up
+\end{itemize}
+\subsubsection{screen}
+\label{sec:org48b556d}
+\begin{itemize}
+\item c-l: center the screen
+\end{itemize}
+
+\subsection{Edit command}
+\label{sec:orgdd5bda0}
+\begin{itemize}
+\item c-d: delete a character
+\item m-d: delete a word
+
+\item c-\_: undo
+\item c-/: undo
+\item C-g c-/: Redo
+
+\item c-w: cut
+\item c-y: yandk/paste
+
+\item m-u: upper case
+\item m-l: lower case
+\item m-c: capitalize
+\end{itemize}
+
+\subsection{Multiple Windos}
+\label{sec:org2c70ec6}
+\begin{itemize}
+\item C-M-v: scroll other window
+\item c-x 2: split top/down
+\item c-x 3: split left/right
+\item c-x o: other window
+\end{itemize}
+
+\subsection{search}
+\label{sec:org315cc50}
+\begin{itemize}
+\item c-s text: search
+\item c-s TEXT: case sensitive search
+\item m-x query-replace <----> m-\%
+\item m-x replace-string
+
+\item M-C-s: search a regexp
+
+\item M-s o: searches and shows alll the occurances in an \textbf{Occur} buffer. You can click on the lines to jump to those lines.
+
+\item m-x grep <enter>
+\end{itemize}
+
+\subsection{mark}
+\label{sec:org38d1dcd}
+\begin{itemize}
+\item c-space: start/toggle marking a region
+\end{itemize}
+
+\subsection{check}
+\label{sec:orge4b6fc0}
+
+\begin{itemize}
+\item m-\$: spell check word
+\item m-x flyspell-mode
+\item m-x ispell-region: check a small region
+\item m-x ispell-buffer: check all of the buffer
+\end{itemize}
+
+\subsection{shell}
+\label{sec:orge9a042c}
+\begin{itemize}
+\item m-x shell: start a bash command line
+\end{itemize}
+
+\subsection{Customize variavle, group, mode, function}
+\label{sec:orgbfa79ef}
+
+\section{Configuration for project and IDE}
+\label{sec:org018c839}
+\subsection{Package Management}
+\label{sec:orgb7a6a43}
+\begin{itemize}
+\item Introduction
+\end{itemize}
+MELPA: Milkypostman's Emacs Lisp Package Archives
+\begin{itemize}
+\item M-x  package-list-packages
+\end{itemize}
+d: delete
+i: install
+x: execute
+\begin{itemize}
+\item \href{https://melpa.org/}{melpa.org}
+\item Add melpa package
+\end{itemize}
+\begin{verbatim}
+  ;;;initialize package
+  (require 'package)
+  (setq package-archives '(
+  ;			 ("gnu" . "https://elpa.gnu.org/packages/")
+;			   ("melpa" . "https://melpa.org/packages/")
+			   ("melpa-stable" . "https:://stable.melpa.org/packages/"))
+  )
+  (package-initialize)
+\end{verbatim}
+\begin{itemize}
+\item Auto install package configuration
+\begin{verbatim}
+
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives  '(
+				    ("melpa" . "https://melpa.org/packages/"))))
+(require 'cl)
+;;add whatever package you want here
+(defvar yubao/packages '(
+			 company
+			 )
+  "Default packages")
+(defun yubao/packages-installed-p ()
+  (loop for pkg in yubao/packages
+	when (not (package-installed-p pkg)) do (return nil)
+	finally (return t)))
+
+(unless (yubao/packages-installed-p)
+  (message "%s" "Refreshing package database .... ")
+  (package-refresh-contents)
+  (dolist (pkg yubao/packages)
+    (when (not (package-installed-p pkg))
+      (package-install pkg))))
+\end{verbatim}
+\end{itemize}
+\subsection{linum Mode}
+\label{sec:orga5d2bf8}
+(global-linum-mode t)
+(linum-mode t)
+
+\subsection{Company Mode}
+\label{sec:org9b1370c}
+\begin{itemize}
+\item \href{http://company-mode.github.io/}{company-mode}
+\item What's Company Mode?
+\end{itemize}
+Company => company anything
+\begin{itemize}
+\item How to enable company mode?
+\end{itemize}
+
+(company-mode t);work on current buffer
+(global-company-mode t);work on all the opened buffer
+
+Use M-n or M-p to select candidate item
+\subsection{Speedbar}
+\label{sec:org2ecdcbf}
+m-x speedbar <enter> or m-x speed <tab> <enter> :list project files
+\subsection{Compile}
+\label{sec:orgbd602fd}
+m-x compile
+\subsection{Debug}
+\label{sec:org05e9f29}
+c-x ` : jump to the next error. That ` is a back quote on the top left of the keyboard
+\subsection{Format}
+\label{sec:org4bcbb1b}
+\begin{itemize}
+\item Auto Update the Sequence Number
+\end{itemize}
+Example:
+\begin{enumerate}
+\item first
+\item second
+\item third
+\item fourth
+\end{enumerate}
+
+Then I want to insert one item:   
+Example:
+\begin{enumerate}
+\item first
+\item second
+\item Inserted new item
+\item third
+\item fourth
+\end{enumerate}
+
+Therefore, think a question: how to auto sort the list?
+
+Method:
+
+Move the curser to the end, and press 'M' (meta), and then press Return key.
+
+Sorted items:
+\begin{enumerate}
+\item first
+\item second
+\item Inserted new item
+\item third
+\item fourth
+
+\item Indent
+M-x indent-gegion: indents the region
+\end{enumerate}
+\subsection{Show match parents "()"}
+\label{sec:org97017b6}
+[menu]=>[Options]=>[Highlight Matching Parentheses]
+
+\begin{verbatim}
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+\end{verbatim}
+\subsection{Highlight current line}
+\label{sec:orgf946979}
+\begin{verbatim}
+(global-hl-line-mode t)
+\end{verbatim}
+\subsection{Disable backup file (*.\textasciitilde{})}
+\label{sec:orgb8f56b7}
+\begin{verbatim}
+;;disable backup file (*.~)
+(setq make-backup-files nil)
+\end{verbatim}
+\subsection{Enable Recent Files}
+\label{sec:orgd6b896c}
+\begin{verbatim}
+(require 'recentf)
+(recentf-mode t)
+(setq recentf-max-menu-items 25)
+;;uncomment this statement if u want to use shortcut key
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+\end{verbatim}
+\subsection{Delete Selection Mode}
+\label{sec:org2257caf}
+\begin{verbatim}
+;;add delete selection mode
+(delete-selection-mode t)
+\end{verbatim}
+
+\subsection{Install Hungary Delete mode}
+\label{sec:org5146e9f}
+\begin{verbatim}
+;;config hungry-delete mode
+(require 'hungry-delete)
+(global-hungry-delete-mode)
+\end{verbatim}
+\subsection{Install a Theme}
+\label{sec:org1f181fb}
+\begin{verbatim}
+(load-theme 'monokai t)
+\end{verbatim}
+
+\begin{verbatim}
+(require 'smex) ; Not needed if you use package.el
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+\end{verbatim}
+\subsection{Install swiper and counsel}
+\label{sec:org7a0dca9}
+\begin{itemize}
+\item \href{https://github.com/abo-abo/swiper}{swiper}
+\item configuration  
+\begin{verbatim}
+  (ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
+\end{verbatim}
+\end{itemize}
+\subsection{Install and Configure Smartparens mode}
+\label{sec:orgc3631cc}
+\begin{itemize}
+\item Install
+\href{https://github.com/Fuco1/smartparens\#getting-started}{samartparents}
+\item Configure
+\end{itemize}
+\begin{verbatim}
+(require 'smartparens-config)
+(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
+\end{verbatim}
+\subsection{Configure Javascript IDE}
+\label{sec:org7a7ca8e}
+\begin{itemize}
+\item install js2-mode in Emacs
+\item Configuration js2-mode
+\end{itemize}
+Thde default mode is "javascript mode", use this to change to Javascript IDE:
+\begin{verbatim}
+;;configure for js2-mode
+(setq auto-mode-alist
+      (append
+       '(("\\.js\\'" . js2-mode))
+auto-mode-alist))
+\end{verbatim}
+\begin{itemize}
+\item Install nodejs in OS
+\item Install nodejs-repl
+\item Configure nodejs-repl
+set nodejs-repl-command to "nodejs" in ubuntu system
+\end{itemize}
+\begin{verbatim}
+;Type M-x nodejs-repl to run Node.js REPL. See also comint-mode to check key bindings.
+;You can define key bindings to send JavaScript codes to REPL like below:
+
+(add-hook 'js-mode-hook
+	  (lambda ()
+	    (define-key js-mode-map (kbd "C-x C-e") 'nodejs-repl-send-last-sexp)
+	    (define-key js-mode-map (kbd "C-c C-r") 'nodejs-repl-send-region)
+	    (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
+	    (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))	    
+
+\end{verbatim}
+\section{org-mode basics}
+\label{sec:orga698717}
+\subsection{Introduction and Common Configuration}
+\label{sec:org80d1339}
+\subsubsection{How to enter source code edit mode}
+\label{sec:org373ad55}
+\begin{itemize}
+\item C-c ' (C-c and single quote) to enter into the source code edit mode, and then use it to turn back
+\item C-c C-k to abort
+\item Example:
+\end{itemize}
+\begin{verbatim}
+;;press "C-c ' " to edit source code
+  (message "Emacs lisp")
+\end{verbatim}
+\subsection{Schedule and Calenda and Todo}
+\label{sec:orga95cd24}
+\begin{itemize}
+\item TODO creating todo and donw items
+\end{itemize}
+
+shift-RightArrow or C-c C-t: togle TODO state
+\begin{itemize}
+\item C-c C-s: to schedule time
+\item C-c C-d: to set deadline of time
+\item C-c a: lookup the schedual
+\end{itemize}
+\subsubsection{{\bfseries\sffamily TODO} todo}
+\label{sec:orgb086bde}
+\subsubsection{{\bfseries\sffamily DONE} done}
+\label{sec:org54cf4bd}
+\subsection{Links}
+\label{sec:orge5f1d9b}
+\begin{itemize}
+\item \href{http:www.baidu.com}{baidu} : www.baidu.com  C-c C-l: edit the link
+\end{itemize}
+
+\section{Emacs Lisp}
+\label{sec:org46b4aba}
+\subsection{Study Resources}
+\label{sec:org78139e1}
+\begin{itemize}
+\item \href{https://learnxinyminutes.com/}{learnxinyminutes}
+\end{itemize}
+\subsection{Command}
+\label{sec:orgacdecc6}
+\begin{itemize}
+\item M-: -> :to go to the evaluate buffer where you can evaluate a lisp statement.
+\end{itemize}
+For example, "setq" sets a variable to a value: (setq your$\backslash$\(_{\text{var}}\) '123)
+
+\begin{itemize}
+\item M-x ielm : ELISP, describe-mode for help
+\item C-x C-e:  runs the command eval-last-sexp (found in global-map)
+\item M-x eval-buffer :run commands on the current buffer
+\end{itemize}
+\subsection{Elisp Grammer}
+\label{sec:org316d97f}
+\subsubsection{Example}
+\label{sec:orgae17ab6}
+\begin{verbatim}
+;;set a variable
+(setq my-name "yubao")
+
+;;show the variable's value
+(message my-name)
+
+;;define a func to show my name
+(defun showMyName ()
+(interactive);M-x call
+(message "Hello, %s" my-name)
+)
+
+;;call "showMyName" fuction
+(showMyName)
+
+;;how to bind the key
+(global-set-key (kbd "<C-f2>") 'showMyName)
+
+\end{verbatim}
+
+\subsubsection{Variable}
+\label{sec:org0729716}
+
+\subsubsection{Function}
+\label{sec:orgb22abc7}
+
+   (+ 2 2)
+p
+\section{Reference}
+\label{sec:org8a263f2}
+\begin{itemize}
+\item \href{http://book.emacs-china.org/}{MasterEmacsIn21Days}
+\item \href{https://learnxinyminutes.com/}{learnxinyminutes}
+\end{itemize}
+\end{document}

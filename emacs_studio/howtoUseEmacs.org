@@ -11,25 +11,41 @@ Input "<s" and then type <TAB>
 #+END_SRC
 ** Mode and Buffer Introduction
 - major mode: only one
+1. text mode
+2. special mode
+3. prog-mode
+- mode naming
+xxx-mode
+
+xxx-mode-key-map
+
+xxx-mode-mode-hook
+
 - minor mode: 0-n; for Example: tool-bar, scroll bar
 
 C-h m: look up all the enabled minor mode
 - help buffer
 ** control command
 - c-g: quit
-- g: refresh the dired view of the current directory to see change
+- g: refresh the directory view of the current directory to see change
+** How to change Ctrl behavior
+   sudo apt install gnome-tweak-tool
+   
   
 ** Getting Help
-M-x find-fuction
-M-x find-variable
-C-h k: describe the function a key runs
-C-h f: describe a function
-C-h m: get mode-specific information, and this cna list the models currently used
-#+BEGIN_SRC emacs-lisp
+
+-   M-x find-fuction
+-   M-x find-variable
+-   C-h k: describe the function a key runs
+-   C-h f: describe a function
+-   C-h v: describe variable
+For example: C-h v => features
+-   C-h m: get mode-specific information, and this cna list the models currently used
+   #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-h C-f") 'find-function)
 (global-set-key (kbd "C-h C-v") 'find-variable)
 (global-set-key (kbd "C-h C-k") 'find-function-on-key
-#+END_SRC
+   #+END_SRC
 
 ** File and  Buffer commands
 - c-x c-f: open a file
@@ -80,7 +96,7 @@ C-h m: get mode-specific information, and this cna list the models currently use
 - m-l: lower case
 - m-c: capitalize
 
-** Multiple Windos
+** Multiple Windows
 - C-M-v: scroll other window   
 - c-x 2: split top/down
 - c-x 3: split left/right
@@ -111,9 +127,15 @@ C-h m: get mode-specific information, and this cna list the models currently use
 ** shell
 - m-x shell: start a bash command line
 
-** Customize variavle, group, mode, function
+** Customize variable, group, mode, function
    
-* Configuration for project and IDE
+* Configuration
+** How to organize your configs  
+- init-packages.el
+- init-ui.el
+- init-better-defaults.el
+- custom.el
+- init-keybindings.el
 ** Package Management
 - Introduction
 MELPA: Milkypostman's Emacs Lisp Package Archives
@@ -281,7 +303,20 @@ Sorted items:
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
   #+END_SRC
-** Install and Configure Smartparens mode
+** Smartparens
+** popwin
+- Overview
+
+popwin is a popup window manager for Emacs which makes you free from the hell of annoying buffers such like *Help*, *Completions*, *compilation*, and etc.
+
+Take an example. When you complete file names during find-file, the (annoying) *Completions* buffer will appear in a newly splitted window. You might understand the necessity of the window, but you may wonder why the window still remains after completion...
+
+popwin resolves there problems. Windows of such temporary buffers will be shown as a popup window, and you can close them smoothly by typing C-g in anytime.
+- Configuration
+   #+BEGIN_SRC emacs-lisp
+(require 'popwin)
+(popwin-mode 1)
+#+END_SRC
 - Install
   [[https://github.com/Fuco1/smartparens#getting-started][samartparents]]
 - Configure     
@@ -289,6 +324,17 @@ Sorted items:
 (require 'smartparens-config)
 (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 #+END_SRC
+** Abbrev
+   #+BEGIN_SRC  emacs-lisp
+   ;;abbrev mode
+   (abbrev-mode t)
+   ;;press "space" or "RET" to autocomplete
+   (define-abbrev-table 'global-abbrev-table '(
+					    ;;signature
+					    ("yubao" "YubaoLiu")
+					    ("8ms" "Microsoft")
+					    ))
+   #+END_SRC
 ** Configure Javascript IDE
 - install js2-mode in Emacs
 - Configuration js2-mode
@@ -377,6 +423,14 @@ For example, "setq" sets a variable to a value: (setq your\_var '123)
 
    (+ 2 2)
 p
+** Common Functions
+- load-file, load-path, and load
+Refer:  [[http://ergoemacs.org/emacs/elisp_library_system.html][ergoemacs]]
+- features, provide, autoload
+- naming conventions
+All the name should be have a prefix, such that the naming conflicts could be minimal.
+- Define your abbrevs
 * Reference
-- [[http://book.emacs-china.org/][MasterEmacsIn21Days]]
-- [[https://learnxinyminutes.com/][learnxinyminutes]]
+[1] [[http://book.emacs-china.org/][MasterEmacsIn21Days]]
+[2] [[https://learnxinyminutes.com/][learnxinyminutes]]
+[3] [[http://ergoemacs.org/][ErgoEmacs]]

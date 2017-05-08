@@ -1,6 +1,6 @@
 *.dat
 *.cache
-
+*.log
 
 # -*- mode: gitignore; -*-
 
@@ -12,6 +12,7 @@
 auto-save-list
 tramp
 .\#*
+recentf
 
 # Org-mode
 .org-id-locations
