@@ -14,7 +14,7 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
-;;Define a function to open the init file "C-0"
+;;Define a function to open the init file
 (defun myfun/open-my-emacs-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))

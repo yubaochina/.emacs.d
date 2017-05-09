@@ -12,6 +12,8 @@
 					    ;;signature
 					    ("yubao" "YubaoLiu")
 					    ("8ms" "Microsoft")
+					    ("jimi" "** 意味：")
+					    ("jrei" "** 例：")
 					    ))
 ;;add delete selection mode
 (delete-selection-mode t)

@@ -27,6 +27,7 @@
      ("#F309DF" . 85)
      ("#3C3D37" . 100))))
  '(magit-diff-use-overlays nil)
+ '(next-line-add-newlines t)
  '(nodejs-repl-command "nodejs")
  '(org-babel-load-languages
    (quote
