@@ -27,8 +27,17 @@
 (recentf-mode t)
 (setq recentf-max-menu-items 25)
 
-;;lisp config
-(add-hook 'emacs-lisp-mode 'show-paren-mode)
+;;show ()
+
+(define-advice show-paren-function (:around (fn) fix-show-paren-function)
+  "Highlight enclosing parents."
+  (cond ((looking-at-p "\\s(") (funcall fn))
+	(t (save-excursion
+	     (ignore-errors (backward-up-list))
+	     (funcall fn)))))
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+
+
 
 ;;; auto-complete
 					;Enable  auto-complete
@@ -125,6 +134,19 @@
 
 (require 'dired-x)
 (setq dired-dwim-target t)
+
+
+(defun hiden-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+(defun remove-dos-eol ()
+  "Replace DOS eolns CR LF with unix eolns CR"
+  (interactive)
+  (goto-char (point-min))
+  (while (search-forward "\r" nil t) (replace-match "")))
 
 (provide 'init-better-defaults)
 

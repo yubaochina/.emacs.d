@@ -10,18 +10,19 @@
 
    #+END_SRC
 ** Mode and Buffer Introduction
-   - major mode: only one
+- major mode: only one
+Use "C-h v => major-mode" to check the current value of major mode
    1. text mode
    2. special mode
    3. prog-mode
-   - mode naming
+- mode naming
    xxx-mode
 
    xxx-mode-key-map
 
    xxx-mode-mode-hook
 
-   - minor mode: 0-n; for Example: tool-bar, scroll bar
+- minor mode: 0-n; for Example: tool-bar, scroll bar
 
    C-h m: look up all the enabled minor mode
    - help buffer
@@ -31,7 +32,6 @@
 ** How to change Ctrl behavior
    sudo apt install gnome-tweak-tool
    
-  
 ** Getting Help
 
    -   M-x find-fuction
@@ -48,22 +48,23 @@
      #+END_SRC
 
 ** File and  Buffer commands
-   - c-x c-f: open a file
-   - c-x c-k: kill the buffer reprsenting a file .... not deleteing a file
+- M-x ibuffer : open the currently using buffers
+- c-x c-f: open a file
+- c-x c-k: kill the buffer reprsenting a file .... not deleteing a file
 
-   - C-x s: saves all fiels with a prompt
-   - C-x C-s: saves file without a prompt
-   - C-s C-w: saves the file with a different name. Askss you for the name
+- C-x s: saves all fiels with a prompt
+- C-x C-s: saves file without a prompt
+- C-s C-w: saves the file with a different name. Askss you for the name
 
-   - c-x b: switch to a different buffer in a window, asks you which buffer to swich to
-   - C-x C-b: Switches buffers, but shows you the list of buffers in a new window
+- c-x b: switch to a different buffer in a window, asks you which buffer to swich to
+- C-x C-b: Switches buffers, but shows you the list of buffers in a new window
 
 
-   - m-<: begining of the buffer
-   - m->: end of the file
+- m-<: begining of the buffer
+- m->: end of the file
 
-   - M-x recover-file: recovers the auto-saved file
-   - M-x write-file: write the buffer to a different file
+- M-x recover-file: recovers the auto-saved file
+- M-x write-file: write the buffer to a different file
 ** Mouse move command
 *** word
     - c-f: move forward one character
@@ -238,7 +239,14 @@
    [menu]=>[Options]=>[Highlight Matching Parentheses]
 
    #+BEGIN_SRC emacs-lisp
-  (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+(define-advice show-paren-function (:around (fn) fix-show-paren-function)
+  "Highlight enclosing parents."
+  (cond ((looking-at-p "\\s(") (funcall fn))
+	(t (save-excursion
+	     (ignore-errors (backward-up-list))
+	     (funcall fn)))))
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+
    #+END_SRC
 ** Highlight current line
    #+BEGIN_SRC emacs-lisp
@@ -306,6 +314,13 @@
    (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
      #+END_SRC
 ** Smartparens
+#+BEGIN_SRC emacs-lisp
+;;conifgure samartparents mode
+(smartparens-global-mode t)
+;;Fix smart parents' bug=>(add-to-list '')
+(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+#+END_SRC
+
 ** popwin
    - Overview
 
@@ -409,6 +424,23 @@ auto-mode-alist))
 (require 'dired-x)
 (setq dired-dwim-target t)
 #+END_SRC
+** Hide or Remove Dos eolns
+#+BEGIN_SRC emacs-lisp
+
+(defun hiden-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+(defun remove-dos-eol ()
+  "Replace DOS eolns CR LF with unix eolns CR"
+  (interactive)
+  (goto-char (point-min))
+  (while (search-forward "\r" nil t) (replace-match "")))
+#+END_SRC
+** web mode
+
 * org-mode basics
 ** Introduction and Common Configuration
 *** How to enter source code edit mode
@@ -568,6 +600,9 @@ lisp statement.
   [2] [[https://learnxinyminutes.com/][learnxinyminutes]]
   [3] [[http://ergoemacs.org/][ErgoEmacs]]
   [4] [[http://www.lunaryorn.com][Sebastian Wiesner]]
+
+
+
 
 
 

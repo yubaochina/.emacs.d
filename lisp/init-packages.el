@@ -4,6 +4,7 @@
 (require 'cl);common lisp lib
 ;;add whatever package you want here
 (defvar yubao/packages '(
+			 web-mode
 			 reveal-in-osx-finder
 			 popwin
 			 nodejs-repl;need install nodejs in the system
@@ -100,19 +101,14 @@
       (package-install pkg))))
 
 ;;conifgure samartparents mode
-;(smartparens-global-mode t)
-(add-hook 'emacs-lisp-mode-hook 'smartparens-mode) ;only for elisp
+(smartparens-global-mode t)
+;;Fix smart parents' bug=>(add-to-list '')
+(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
 
 ;;config for swiper and counsel
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 ;(setq enable-recursive-minibuffers t)
-
-;;configure for js2-mode
-(setq auto-mode-alist
-      (append
-       '(("\\.js\\'" . js2-mode))
-auto-mode-alist))
 
 
 ;;company mode
@@ -130,5 +126,4 @@ auto-mode-alist))
 (popwin-mode 1)
 
 (provide 'init-packages)
-
 

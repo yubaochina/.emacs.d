@@ -33,7 +33,7 @@
 
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
-(global-set-key (kbd "C-c 0") 'myfun/open-my-emacs-init-file)
+(global-set-key (kbd "<f1>") 'myfun/open-my-emacs-init-file)
 
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 
