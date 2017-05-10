@@ -1,151 +1,151 @@
 * Tutorial: how to use emacs
 ** Frequency used shortcut key and very useful stuff
    Manually Defined:
-- open recent files   
-C-x C-r [M-x recentf-open-files]: open recent files
-- How to input code block quickly "<s + TAB"
-Input "<s" and then type <TAB>
+   - open recent files   
+   C-x C-r [M-x recentf-open-files]: open recent files
+   - How to input code block quickly "<s + TAB"
+   Input "<s" and then type <TAB>
 
-#+BEGIN_SRC 
+   #+BEGIN_SRC 
 
-#+END_SRC
+   #+END_SRC
 ** Mode and Buffer Introduction
-- major mode: only one
-1. text mode
-2. special mode
-3. prog-mode
-- mode naming
-xxx-mode
+   - major mode: only one
+   1. text mode
+   2. special mode
+   3. prog-mode
+   - mode naming
+   xxx-mode
 
-xxx-mode-key-map
+   xxx-mode-key-map
 
-xxx-mode-mode-hook
+   xxx-mode-mode-hook
 
-- minor mode: 0-n; for Example: tool-bar, scroll bar
+   - minor mode: 0-n; for Example: tool-bar, scroll bar
 
-C-h m: look up all the enabled minor mode
-- help buffer
+   C-h m: look up all the enabled minor mode
+   - help buffer
 ** control command
-- c-g: quit
-- g: refresh the directory view of the current directory to see change
+   - c-g: quit
+   - g: refresh the directory view of the current directory to see change
 ** How to change Ctrl behavior
    sudo apt install gnome-tweak-tool
    
   
 ** Getting Help
 
--   M-x find-fuction
--   M-x find-variable
--   C-h k: describe the function a key runs
--   C-h f: describe a function
--   C-h v: describe variable
-For example: C-h v => features
--   C-h m: get mode-specific information, and this cna list the models currently used
-   #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "C-h C-f") 'find-function)
-(global-set-key (kbd "C-h C-v") 'find-variable)
-(global-set-key (kbd "C-h C-k") 'find-function-on-key
-   #+END_SRC
+   -   M-x find-fuction
+   -   M-x find-variable
+   -   C-h k: describe the function a key runs
+   -   C-h f: describe a function
+   -   C-h v: describe variable
+   For example: C-h v => features
+   -   C-h m: get mode-specific information, and this cna list the models currently used
+     #+BEGIN_SRC emacs-lisp
+   (global-set-key (kbd "C-h C-f") 'find-function)
+   (global-set-key (kbd "C-h C-v") 'find-variable)
+   (global-set-key (kbd "C-h C-k") 'find-function-on-key
+     #+END_SRC
 
 ** File and  Buffer commands
-- c-x c-f: open a file
-- c-x c-k: kill the buffer reprsenting a file .... not deleteing a file
+   - c-x c-f: open a file
+   - c-x c-k: kill the buffer reprsenting a file .... not deleteing a file
 
-- C-x s: saves all fiels with a prompt
-- C-x C-s: saves file without a prompt
-- C-s C-w: saves the file with a different name. Askss you for the name
+   - C-x s: saves all fiels with a prompt
+   - C-x C-s: saves file without a prompt
+   - C-s C-w: saves the file with a different name. Askss you for the name
 
-- c-x b: switch to a different buffer in a window, asks you which buffer to swich to
-- C-x C-b: Switches buffers, but shows you the list of buffers in a new window
+   - c-x b: switch to a different buffer in a window, asks you which buffer to swich to
+   - C-x C-b: Switches buffers, but shows you the list of buffers in a new window
 
-  
-- m-<: begining of the buffer
-- m->: end of the file
 
-- M-x recover-file: recovers the auto-saved file
-- M-x write-file: write the buffer to a different file
+   - m-<: begining of the buffer
+   - m->: end of the file
+
+   - M-x recover-file: recovers the auto-saved file
+   - M-x write-file: write the buffer to a different file
 ** Mouse move command
 *** word
-- c-f: move forward one character
-- c-b: move back one character
-- M-f: move forward one world
-- M-b: move back one world
+    - c-f: move forward one character
+    - c-b: move back one character
+    - M-f: move forward one world
+    - M-b: move back one world
 *** line
-- c-p: previous line/up
-- c-n: next line/down
-- c-a: move to the beginning of the a line
-- c-e: move to the end of the line
+    - c-p: previous line/up
+    - c-n: next line/down
+    - c-a: move to the beginning of the a line
+    - c-e: move to the end of the line
 *** page
-- c-v: gage down
-- m-v: page up
+    - c-v: gage down
+    - m-v: page up
 *** screen
-- c-l: center the screen
+    - c-l: center the screen
 
 ** Edit command
-- c-d: delete a character
-- m-d: delete a word
+   - c-d: delete a character
+   - m-d: delete a word
 
-- c-_: undo
-- c-/: undo
-- C-g c-/: Redo
+   - c-_: undo
+   - c-/: undo
+   - C-g c-/: Redo
 
-- c-w: cut
-- c-y: yandk/paste
+   - c-w: cut
+   - c-y: yandk/paste
 
-- m-u: upper case
-- m-l: lower case
-- m-c: capitalize
+   - m-u: upper case
+   - m-l: lower case
+   - m-c: capitalize
 
 ** Multiple Windows
-- C-M-v: scroll other window   
-- c-x 2: split top/down
-- c-x 3: split left/right
-- c-x o: other window
+   - C-M-v: scroll other window   
+   - c-x 2: split top/down
+   - c-x 3: split left/right
+   - c-x o: other window
 
 ** search
-- c-s text: search
-- c-s TEXT: case sensitive search
-- m-x query-replace <----> m-%
-- m-x replace-string
+   - c-s text: search
+   - c-s TEXT: case sensitive search
+   - m-x query-replace <----> m-%
+   - m-x replace-string
 
-- M-C-s: search a regexp
+   - M-C-s: search a regexp
 
-- M-s o: searches and shows alll the occurances in an *Occur* buffer. You can click on the lines to jump to those lines.
+   - M-s o: searches and shows alll the occurances in an *Occur* buffer. You can click on the lines to jump to those lines.
 
-- m-x grep <enter>
+   - m-x grep <enter>
 
 ** mark
-- c-space: start/toggle marking a region
+   - c-space: start/toggle marking a region
 
 ** check
 
-- m-$: spell check word
-- m-x flyspell-mode
-- m-x ispell-region: check a small region
-- m-x ispell-buffer: check all of the buffer
+   - m-$: spell check word
+   - m-x flyspell-mode
+   - m-x ispell-region: check a small region
+   - m-x ispell-buffer: check all of the buffer
 
 ** shell
-- m-x shell: start a bash command line
+   - m-x shell: start a bash command line
 
 ** Customize variable, group, mode, function
    
 * Configuration
 ** How to organize your configs  
-- init-packages.el
-- init-ui.el
-- init-better-defaults.el
-- custom.el
-- init-keybindings.el
+   - init-packages.el
+   - init-ui.el
+   - init-better-defaults.el
+   - custom.el
+   - init-keybindings.el
 ** Package Management
-- Introduction
-MELPA: Milkypostman's Emacs Lisp Package Archives
-- M-x  package-list-packages
-d: delete
-i: install
-x: execute
-- [[https://melpa.org/][melpa.org]]
-- Add melpa package
-#+BEGIN_SRC  emacs-lisp
+   - Introduction
+   MELPA: Milkypostman's Emacs Lisp Package Archives
+   - M-x  package-list-packages
+   d: delete
+   i: install
+   x: execute
+   - [[https://melpa.org/][melpa.org]]
+   - Add melpa package
+   #+BEGIN_SRC  emacs-lisp
   ;;;initialize package
   (require 'package)
   (setq package-archives '(
@@ -154,112 +154,114 @@ x: execute
 			   ("melpa-stable" . "https:://stable.melpa.org/packages/"))
   )
   (package-initialize)
-#+END_SRC
-- Auto install package configuration
-  #+BEGIN_SRC emacs-lisp
+   #+END_SRC
+   - Auto install package configuration
+     #+BEGIN_SRC emacs-lisp
 
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (package-initialize)
-  (add-to-list 'package-archives  '(
-				    ("melpa" . "https://melpa.org/packages/"))))
-(require 'cl)
-;;add whatever package you want here
-(defvar yubao/packages '(
-			 company
-			 )
-  "Default packages")
-(defun yubao/packages-installed-p ()
-  (loop for pkg in yubao/packages
-	when (not (package-installed-p pkg)) do (return nil)
-	finally (return t)))
+   (when (>= emacs-major-version 24)
+     (require 'package)
+     (package-initialize)
+     (add-to-list 'package-archives  '(
+				       ("melpa" . "https://melpa.org/packages/"))))
+   (require 'cl)
+   ;;add whatever package you want here
+   (defvar yubao/packages '(
+			    company
+			    )
+     "Default packages")
+   (defun yubao/packages-installed-p ()
+     (loop for pkg in yubao/packages
+	   when (not (package-installed-p pkg)) do (return nil)
+	   finally (return t)))
 
-(unless (yubao/packages-installed-p)
-  (message "%s" "Refreshing package database .... ")
-  (package-refresh-contents)
-  (dolist (pkg yubao/packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
-  #+END_SRC
+   (unless (yubao/packages-installed-p)
+     (message "%s" "Refreshing package database .... ")
+     (package-refresh-contents)
+     (dolist (pkg yubao/packages)
+       (when (not (package-installed-p pkg))
+	 (package-install pkg))))
+     #+END_SRC
 ** linum Mode
-(global-linum-mode t)
-(linum-mode t)
+   (global-linum-mode t)
+   (linum-mode t)
 
 ** Company Mode
-- [[http://company-mode.github.io/][company-mode]]   
-- What's Company Mode?
-Company => company anything
-- How to enable company mode?
+   - [[http://company-mode.github.io/][company-mode]]   
+   - What's Company Mode?
+   Company => company anything
+   - How to enable company mode?
 
-(company-mode t);work on current buffer
-(global-company-mode t);work on all the opened buffer
+   (company-mode t);work on current buffer
+   (global-company-mode t);work on all the opened buffer
 
-Use M-n or M-p to select candidate item
+   Use M-n or M-p to select candidate item
 ** Speedbar
-  m-x speedbar <enter> or m-x speed <tab> <enter> :list project files
+   m-x speedbar <enter> or m-x speed <tab> <enter> :list project files
 ** Compile
-  m-x compile
+   m-x compile
+   - How to compile lisp script
+   M-x byte-compile-file + ".el" file 
 ** Debug
-  c-x ` : jump to the next error. That ` is a back quote on the top left of the keyboard
+   c-x ` : jump to the next error. That ` is a back quote on the top left of the keyboard
 ** Format
-- Auto Update the Sequence Number
-Example:
-1. first
-2. second
-3. third
-4. fourth
+   - Auto Update the Sequence Number
+   Example:
+   1. first
+   2. second
+   3. third
+   4. fourth
 
-Then I want to insert one item:   
-Example:
-1. first
-2. second
-3. Inserted new item
-3. third
-4. fourth
+   Then I want to insert one item:   
+   Example:
+   1. first
+   2. second
+   3. Inserted new item
+   3. third
+   4. fourth
 
-Therefore, think a question: how to auto sort the list?
+   Therefore, think a question: how to auto sort the list?
 
-Method:
+   Method:
 
-Move the curser to the end, and press 'M' (meta), and then press Return key.
+   Move the curser to the end, and press 'M' (meta), and then press Return key.
 
-Sorted items:
-1. first
-2. second
-3. Inserted new item
-4. third
-5. fourth
+   Sorted items:
+   1. first
+   2. second
+   3. Inserted new item
+   4. third
+   5. fourth
 
-7. Indent
-   M-x indent-gegion: indents the region
+   7. Indent
+      M-x indent-gegion: indents the region
 ** Show match parents "()"
-[menu]=>[Options]=>[Highlight Matching Parentheses]
+   [menu]=>[Options]=>[Highlight Matching Parentheses]
 
-#+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp
   (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
-#+END_SRC
+   #+END_SRC
 ** Highlight current line
-#+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp
   (global-hl-line-mode t)
-#+END_SRC
+   #+END_SRC
 ** Disable backup file (*.~)
-#+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp
 ;;disable backup file (*.~)
 (setq make-backup-files nil)
-#+END_SRC
+   #+END_SRC
 ** Enable Recent Files
-#+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp
      (require 'recentf)
      (recentf-mode t)
      (setq recentf-max-menu-items 25)
      ;;uncomment this statement if u want to use shortcut key
      (global-set-key "\C-x\ \C-r" 'recentf-open-files)
-#+END_SRC
+   #+END_SRC
 ** Delete Selection Mode
-#+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp
 ;;add delete selection mode
 (delete-selection-mode t)
-#+END_SRC
+   #+END_SRC
 
 ** Install Hungary Delete mode
    #+BEGIN_SRC emacs-lisp
@@ -268,62 +270,62 @@ Sorted items:
    (global-hungry-delete-mode)
    #+END_SRC
 ** Install a Theme
-#+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp
   (load-theme 'monokai t)
-#+END_SRC
+   #+END_SRC
 
-#+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp
 (require 'smex) ; Not needed if you use package.el
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-#+END_SRC
+   #+END_SRC
 ** Install swiper and counsel
-- [[https://github.com/abo-abo/swiper][swiper]]
-- configuration  
-  #+BEGIN_SRC emacs-lisp
-  (ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
-(global-set-key "\C-s" 'swiper)
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
-(global-set-key (kbd "<f6>") 'ivy-resume)
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "<f1> f") 'counsel-describe-function)
-(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-(global-set-key (kbd "<f1> l") 'counsel-find-library)
-(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-(global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-c j") 'counsel-git-grep)
-(global-set-key (kbd "C-c k") 'counsel-ag)
-(global-set-key (kbd "C-x l") 'counsel-locate)
-(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
-(define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
-  #+END_SRC
+   - [[https://github.com/abo-abo/swiper][swiper]]
+   - configuration  
+     #+BEGIN_SRC emacs-lisp
+     (ivy-mode 1)
+   (setq ivy-use-virtual-buffers t)
+   (setq enable-recursive-minibuffers t)
+   (global-set-key "\C-s" 'swiper)
+   (global-set-key (kbd "C-c C-r") 'ivy-resume)
+   (global-set-key (kbd "<f6>") 'ivy-resume)
+   (global-set-key (kbd "M-x") 'counsel-M-x)
+   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+   (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+   (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+   (global-set-key (kbd "<f1> l") 'counsel-find-library)
+   (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+   (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+   (global-set-key (kbd "C-c g") 'counsel-git)
+   (global-set-key (kbd "C-c j") 'counsel-git-grep)
+   (global-set-key (kbd "C-c k") 'counsel-ag)
+   (global-set-key (kbd "C-x l") 'counsel-locate)
+   (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+   (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
+     #+END_SRC
 ** Smartparens
 ** popwin
-- Overview
+   - Overview
 
-popwin is a popup window manager for Emacs which makes you free from the hell of annoying buffers such like *Help*, *Completions*, *compilation*, and etc.
+   popwin is a popup window manager for Emacs which makes you free from the hell of annoying buffers such like *Help*, *Completions*, *compilation*, and etc.
 
-Take an example. When you complete file names during find-file, the (annoying) *Completions* buffer will appear in a newly splitted window. You might understand the necessity of the window, but you may wonder why the window still remains after completion...
+   Take an example. When you complete file names during find-file, the (annoying) *Completions* buffer will appear in a newly splitted window. You might understand the necessity of the window, but you may wonder why the window still remains after completion...
 
-popwin resolves there problems. Windows of such temporary buffers will be shown as a popup window, and you can close them smoothly by typing C-g in anytime.
-- Configuration
+   popwin resolves there problems. Windows of such temporary buffers will be shown as a popup window, and you can close them smoothly by typing C-g in anytime.
+   - Configuration
+     #+BEGIN_SRC emacs-lisp
+   (require 'popwin)
+   (popwin-mode 1)
+     #+END_SRC
+   - Install
+     [[https://github.com/Fuco1/smartparens#getting-started][samartparents]]
+   - Configure     
    #+BEGIN_SRC emacs-lisp
-(require 'popwin)
-(popwin-mode 1)
-#+END_SRC
-- Install
-  [[https://github.com/Fuco1/smartparens#getting-started][samartparents]]
-- Configure     
-#+BEGIN_SRC emacs-lisp
 (require 'smartparens-config)
 (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
-#+END_SRC
+   #+END_SRC
 ** Abbrev
    #+BEGIN_SRC  emacs-lisp
    ;;abbrev mode
@@ -336,21 +338,21 @@ popwin resolves there problems. Windows of such temporary buffers will be shown 
 					    ))
    #+END_SRC
 ** Configure Javascript IDE
-- install js2-mode in Emacs
-- Configuration js2-mode
-Thde default mode is "javascript mode", use this to change to Javascript IDE:
-#+BEGIN_SRC 
+   - install js2-mode in Emacs
+   - Configuration js2-mode
+   Thde default mode is "javascript mode", use this to change to Javascript IDE:
+   #+BEGIN_SRC 
 ;;configure for js2-mode
 (setq auto-mode-alist
       (append
        '(("\\.js\\'" . js2-mode))
 auto-mode-alist))
-#+END_SRC
-- Install nodejs in OS
-- Install nodejs-repl
-- Configure nodejs-repl
-  set nodejs-repl-command to "nodejs" in ubuntu system
-#+BEGIN_SRC emacs-lisp
+   #+END_SRC
+   - Install nodejs in OS
+   - Install nodejs-repl
+   - Configure nodejs-repl
+     set nodejs-repl-command to "nodejs" in ubuntu system
+   #+BEGIN_SRC emacs-lisp
 ;Type M-x nodejs-repl to run Node.js REPL. See also comint-mode to check key bindings.
 ;You can define key bindings to send JavaScript codes to REPL like below:
 
@@ -361,35 +363,81 @@ auto-mode-alist))
             (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
             (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))	    
 
-#+END_SRC  
+   #+END_SRC  
+** hippie-expand
+   #+BEGIN_SRC  emacs-lisp
+   (global-set-key (kbd "s-/") 'hippie-expand)
+
+(setq hippie-expand-try-functions-list '(
+					 try-expand-dabbrev
+					 try-expand-dabbrev-all-buffers
+					 try-expand-dabbrev-from-kill
+					 try-complete-file-name-partially
+					 try-complete-file-name
+					 try-expand-list
+					 try-expand-line
+					 try-complete-lisp-symbol-partially
+					 try-complete-lisp-symbol))
+
+   #+END_SRC
+** dired mode
+- C-x d : open dird mode
+- + : add new directory, then use "C-x C-f" to create a new file
+- C : copy a file
+- g : update the directory list
+- D : delete the file after confirm
+- d : label the file that will be deleted
+- u : cancel the label
+- x : execute
+- R : rename file
+- c : compress file  
+#+BEGIN_SRC emacs-lisp
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq dired-recursive-copies 'always)
+(setq dired-recursive-deletes 'always)
+;; avoid open many buffers
+(put 'dired-find-alternate-file 'disabled nil)
+;;(require 'dired);;necessary, because directory mode is a major mode
+;;(define-key dired-mode-map (dbd "RET") 'dired-find-alternate-file)
+(with-eval-after-load 'dired
+  (define-key dired-mode-map (dbd "RET") 'dired-find-alternate-file))
+
+#+END_SRC
+** dired-x mode
+- C-x C-j : open the current file's dired mode   
+#+BEGIN_SRC emacs-lisp
+(require 'dired-x)
+(setq dired-dwim-target t)
+#+END_SRC
 * org-mode basics
 ** Introduction and Common Configuration
 *** How to enter source code edit mode
-- C-c ' (C-c and single quote) to enter into the source code edit mode, and then use it to turn back
-- C-c C-k to abort
-- Example:
-#+BEGIN_SRC emacs-lisp
+    - C-c ' (C-c and single quote) to enter into the source code edit mode, and then use it to turn back
+    - C-c C-k to abort
+    - Example:
+    #+BEGIN_SRC emacs-lisp
 ;;press "C-c ' " to edit source code
   (message "Emacs lisp")
-#+END_SRC
+    #+END_SRC
 ** Schedule and Calenda and Todo
-- TODO creating todo and donw items
+   - TODO creating todo and donw items
 
-shift-RightArrow or C-c C-t: togle TODO state
-- C-c C-s: to schedule time
-- C-c C-d: to set deadline of time
-- C-c a: lookup the schedual
+   shift-RightArrow or C-c C-t: togle TODO state
+   - C-c C-s: to schedule time
+   - C-c C-d: to set deadline of time
+   - C-c a: lookup the schedual
 *** TODO todo
 *** DONE done
 ** Links
-- [[http:www.baidu.com][baidu]] : www.baidu.com  C-c C-l: edit the link
+   - [[http:www.baidu.com][baidu]] : www.baidu.com  C-c C-l: edit the link
 
 * Emacs Lisp
 ** Study Resources
-- [[https://learnxinyminutes.com/][learnxinyminutes]]
+   - [[https://learnxinyminutes.com/][learnxinyminutes]]
 ** Command  
-- M-: -> :to go to the evaluate buffer where you can evaluate a lisp statement.
-For example, "setq" sets a variable to a value: (setq your\_var '123)
+- M-: -> :to go to the evaluate buffer where you can evaluate a 
+lisp statement.
+   For example, "setq" sets a variable to a value: (setq your\_var '123)
 
 - M-x ielm : ELISP, describe-mode for help
 - C-x C-e:  runs the command eval-last-sexp (found in global-map)
@@ -421,16 +469,111 @@ For example, "setq" sets a variable to a value: (setq your\_var '123)
 
 *** Function   
 
-   (+ 2 2)
-p
+    (+ 2 2)
+    p
 ** Common Functions
-- load-file, load-path, and load
-Refer:  [[http://ergoemacs.org/emacs/elisp_library_system.html][ergoemacs]]
-- features, provide, autoload
+   Refer:  [[http://ergoemacs.org/emacs/elisp_library_system.html][ergoemacs]]
+- require
+   require dependents on "load"
+
+   #+BEGIN_SRC emacs-lisp
+  (require 'init-packages)
+  (require 'init-ui)
+  (require 'init-better-defaults)
+  (require 'init-keybindings)
+  (require 'init-org)
+   #+END_SRC
+   require is a built-in function in ‘C source code’.
+
+   (require FEATURE &optional FILENAME NOERROR)
+
+   If feature FEATURE is not loaded, load it from FILENAME.
+   If FEATURE is not a member of the list ‘features’, then the feature is not loaded; so load the file FILENAME.
+
+   If FILENAME is omitted, the printname of FEATURE is used as the file name, and ‘load’ will try to load this name appended with the suffix ‘.elc’, ‘.el’, or the system-dependent suffix for dynamic module files, in that order.  The name without appended suffix will not be require is a built-in function in ‘C source code’.
+- load
+     load dependents on "load-path"
+
+   #+BEGIN_SRC emacs-lisp
+(load "init-packages")
+(load "init-ui")
+(load "init-better-defaults")
+(load "init-keybindings")
+(load "init-org")
+   #+END_SRC
+- load-file
+   #+BEGIN_SRC emacs-lisp
+  (load-file "~/.emacs.d/lisp/init-packages.elc")
+  (load-file "~/.emacs.d/lisp/init-ui.elc")
+  (load-file "~/.emacs.d/lisp/init-keybindings.elc")
+  (load-file "~/.emacs.d/lisp/init-better-defaults.elc")
+  (load-file "~/.emacs.d/lisp/init-org.elc")
+   #+END_SRC
+   Note: if there is no .elc file, please use "M-x byte-compile-file" to compile .el file to .elc fistly, and then use "C-x C-e" to execute these commands
+
+   In the "*Messages" buffer, we can see these messages:
+
+   Wrote /home/yubao/.emacs.d/lisp/init-ui.elc
+
+   Loading /home/yubao/.emacs.d/lisp/init-ui.elc...done
+  load sequence: .elc -> .el
+   load will load .elc file firstly, if no .elc file exists, it will load .el file
+- autoload
+   #+BEGIN_SRC emacs-lisp
+;;add the following code in init-better-defaults.el
+;;;###autoload
+(defun test-autoload()
+  (interactive)
+  (message "test autoload")
+)
+
+;;add the following code in init.el
+(autoload 'test-autoload "init-better-defaults")
+(test-autoload)
+
+(update-file-autoloads "~/.emacs.d/lisp/init-better-defaults.el" t "~/.emacs.d/lisp/init-better-defaults-autoload.el")
+   #+END_SRC
+- indent-buffer
+   #+BEGIN_SRC emacs-lisp
+(defun indent-buffer ()
+  "Indent the currently visitied buffer."
+  (interactive)
+  (indent-region (point-min) (point-max))
+  )
+   #+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(defun indent-region-or-buffer ()
+  "Indent a region if selected, otherwise the whole buffer."
+  (interactive)
+  (save-excursion
+    (if(region-active-p)
+	(progn
+	  (indent-region (region-beginning) (region-end))
+	  (message "Indented selected region.")
+	  )
+      (progn
+	(indent-buffer)
+	(message "Indented buffer.")))))
+
+(global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
+
+#+END_SRC
 - naming conventions
-All the name should be have a prefix, such that the naming conflicts could be minimal.
-- Define your abbrevs
+   All the name should be have a prefix, such that the naming conflicts could be minimal.
+   - Define your abbrevs
+
 * Reference
-[1] [[http://book.emacs-china.org/][MasterEmacsIn21Days]]
-[2] [[https://learnxinyminutes.com/][learnxinyminutes]]
-[3] [[http://ergoemacs.org/][ErgoEmacs]]
+  [1] [[http://book.emacs-china.org/][MasterEmacsIn21Days]]
+  [2] [[https://learnxinyminutes.com/][learnxinyminutes]]
+  [3] [[http://ergoemacs.org/][ErgoEmacs]]
+  [4] [[http://www.lunaryorn.com][Sebastian Wiesner]]
+
+
+
+
+
+
+
+
+

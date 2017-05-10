@@ -35,5 +35,14 @@
 
 (global-set-key (kbd "C-c 0") 'myfun/open-my-emacs-init-file)
 
+(global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
+
+(global-set-key (kbd "s-/") 'hippie-expand) ;s => cmd
+
+;;(require 'dired)
+(with-eval-after-load 'dired
+  (define-key dired-mode-map (dbd "RET") 'dired-find-alternate-file))
 
 (provide 'init-keybindings)
+
+

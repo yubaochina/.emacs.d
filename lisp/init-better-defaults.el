@@ -1,6 +1,6 @@
 (setq ring-bell-function 'ignore)
 
-;show line number
+					;show line number
 (global-linum-mode t)
 
 (global-auto-revert-mode t)
@@ -20,7 +20,7 @@
 
 ;;disable auto save
 (setq auto-save-default nil)
-;disable auto backup file
+					;disable auto backup file
 (setq make-backup-files nil)
 
 
@@ -32,7 +32,7 @@
 (add-hook 'emacs-lisp-mode 'show-paren-mode)
 
 ;;; auto-complete
-;Enable  auto-complete
+					;Enable  auto-complete
 (require 'auto-complete-config)
 (ac-config-default)
 (require 'auto-complete)
@@ -48,7 +48,7 @@
 (defun my:ac-c-header-init ()
   (require 'auto-complete-c-headers)
   (add-to-list 'ac-sources 'ac-source-c-headers)
-(add-to-list 'achead:includedirectories "/usr/lib/gcc/x86_64-linux-gnu/6/include"))
+  (add-to-list 'achead:includedirectories "/usr/lib/gcc/x86_64-linux-gnu/6/include"))
 
 ;;now let's call this function from c/c++ hooks
 (add-hook 'c++-mode-hook 'my:ac-c-header-init)
@@ -81,12 +81,54 @@
 (global-semantic-idle-scheduler-mode 1)
 
 ;;start eide
-;(eide-start)
+					;(eide-start)
 
 
 ;;config hungry-delete mode
 (require 'hungry-delete)
 (global-hungry-delete-mode)
 
+(defun indent-buffer ()
+  "Indent the currently visitied buffer."
+  (interactive)
+  (indent-region (point-min) (point-max))
+  )
+
+(defun indent-region-or-buffer ()
+  "Indent a region if selected, otherwise the whole buffer."
+  (interactive)
+  (save-excursion
+    (if(region-active-p)
+	(progn
+	  (indent-region (region-beginning) (region-end))
+	  (message "Indented selected region.")
+	  )
+      (progn
+	(indent-buffer)
+	(message "Indented buffer.")))))
+
+(setq hippie-expand-try-functions-list '(
+					 try-expand-dabbrev
+					 try-expand-dabbrev-all-buffers
+					 try-expand-dabbrev-from-kill
+					 try-complete-file-name-partially
+					 try-complete-file-name
+					 try-expand-list
+					 try-expand-line
+					 try-complete-lisp-symbol-partially
+					 try-complete-lisp-symbol))
+
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq dired-recursive-copies 'always)
+(setq dired-recursive-deletes 'always)
+
+(put 'dired-find-alternate-file 'disabled nil)
+
+(require 'dired-x)
+(setq dired-dwim-target t)
 
 (provide 'init-better-defaults)
+
+
+
+

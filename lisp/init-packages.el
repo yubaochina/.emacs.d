@@ -4,6 +4,7 @@
 (require 'cl);common lisp lib
 ;;add whatever package you want here
 (defvar yubao/packages '(
+			 reveal-in-osx-finder
 			 popwin
 			 nodejs-repl;need install nodejs in the system
 			 js2-mode
