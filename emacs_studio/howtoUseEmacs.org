@@ -440,6 +440,7 @@ auto-mode-alist))
   (while (search-forward "\r" nil t) (replace-match "")))
 #+END_SRC
 ** web mode
+   M-;: auto note, can be used with "C-Space"
 
 * org-mode basics
 ** Introduction and Common Configuration
@@ -594,21 +595,11 @@ lisp statement.
 - naming conventions
    All the name should be have a prefix, such that the naming conflicts could be minimal.
    - Define your abbrevs
-
+     
 * Reference
-  [1] [[http://book.emacs-china.org/][MasterEmacsIn21Days]]
-  [2] [[https://learnxinyminutes.com/][learnxinyminutes]]
-  [3] [[http://ergoemacs.org/][ErgoEmacs]]
-  [4] [[http://www.lunaryorn.com][Sebastian Wiesner]]
-
-
-
-
-
-
-
-
-
-
-
-
+1. [[http://book.emacs-china.org/][MasterEmacsIn21Days]]
+2. [[http://book.emacs-china.org/#orgheadline26][spacemacsRocks]]
+3. [[https://learnxinyminutes.com/][learnxinyminutes]]
+4. [[http://ergoemacs.org/][ErgoEmacs]]
+5. [[http://www.lunaryorn.com][Sebastian Wiesner]]
+6. [[https://emacs-china.org/][EmacsChinaForum]]

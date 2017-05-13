@@ -4,11 +4,14 @@
 (require 'cl);common lisp lib
 ;;add whatever package you want here
 (defvar yubao/packages '(
+			 iedit
+			 expand-region
 			 web-mode
 			 reveal-in-osx-finder
 			 popwin
 			 nodejs-repl;need install nodejs in the system
 			 js2-mode
+			 js2-refactor
 			 smartparens
 			 counsel
 			 swiper

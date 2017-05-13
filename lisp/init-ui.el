@@ -16,7 +16,7 @@
 
 
 ;;highlight the current line
-(global-hl-line-mode t)
+;(global-hl-line-mode t)
 
 
 (provide 'init-ui)
