@@ -4,6 +4,10 @@
 (require 'cl);common lisp lib
 ;;add whatever package you want here
 (defvar yubao/packages '(
+			 ac-js2
+			 flycheck
+			 helm-ag 
+			 org-pomodoro
 			 iedit
 			 expand-region
 			 web-mode
@@ -22,7 +26,6 @@
 			 latex-pretty-symbols
 			 latex-unicode-math-mode
 			 latex-extra
-			 latex-math-preview
 			 auto-complete-exuberant-ctags
 			 auto-org-md
 			 common-lisp-snippets
@@ -106,7 +109,16 @@
 ;;conifgure samartparents mode
 (smartparens-global-mode t)
 ;;Fix smart parents' bug=>(add-to-list '')
-(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+(with-eval-after-load 'smartparens
+  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+  (sp-local-pair 'lisp-interaction-mode "'" nil :actions nil)
+  )
+
+;(defun disable-single-quote ()
+;  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+;  (sp-local-pair 'lisp-interaction-mode "'" nil :actions nil)p
+;    )
+;(add-hook 'emacs-lisp-mode #'disable-single-quote)
 
 ;;config for swiper and counsel
 (ivy-mode 1)
@@ -127,6 +139,10 @@
 ;;configure popwin
 (require 'popwin)
 (popwin-mode 1)
+
+(add-hook 'js2-mode-hook 'flycheck-mode)
+
+(add-hook 'prog-mode-hook #'yas-minor-mode)
 
 (provide 'init-packages)
 

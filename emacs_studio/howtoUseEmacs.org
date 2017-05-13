@@ -1,14 +1,22 @@
 * Tutorial: how to use emacs
 ** Frequency used shortcut key and very useful stuff
    Manually Defined:
-   - open recent files   
+***   open recent files   
    C-x C-r [M-x recentf-open-files]: open recent files
-   - How to input code block quickly "<s + TAB"
+***    How to input code block quickly "<s + TAB"
    Input "<s" and then type <TAB>
 
    #+BEGIN_SRC 
 
    #+END_SRC
+*** How to rename multiple files' name simultaneously
+
+1. "C-x C-j": enter into dired mode
+2. "C-x C-q": dired-toggle-read-only
+3. "C-;" or M-x iedit-mode
+4. "C-=" or "C-space": select a region
+5. "C-c C-c" :exit
+
 ** Mode and Buffer Introduction
 - major mode: only one
 Use "C-h v => major-mode" to check the current value of major mode
@@ -196,6 +204,15 @@ Use "C-h v => major-mode" to check the current value of major mode
    (global-company-mode t);work on all the opened buffer
 
    Use M-n or M-p to select candidate item
+
+   #+BEGIN_SRC emacs-lisp
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous)
+  )
+      #+END_SRC
 ** Speedbar
    m-x speedbar <enter> or m-x speed <tab> <enter> :list project files
 ** Compile
