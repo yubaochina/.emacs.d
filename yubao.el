@@ -11,6 +11,7 @@
 (require 'init-keybindings)
 (require 'init-org)
 (require 'init-web-ide)
+(require 'init-cppIde)
 ;;;equas to
 ;;(load "init-packages")
 ;;(load "init-ui")

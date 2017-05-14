@@ -464,11 +464,6 @@ auto-mode-alist))
 *** How to enter source code edit mode
     - C-c ' (C-c and single quote) to enter into the source code edit mode, and then use it to turn back
     - C-c C-k to abort
-    - Example:
-    #+BEGIN_SRC emacs-lisp
-;;press "C-c ' " to edit source code
-  (message "Emacs lisp")
-    #+END_SRC
 ** Schedule and Calenda and Todo
    - TODO creating todo and donw items
 
@@ -478,6 +473,34 @@ auto-mode-alist))
    - C-c a: lookup the schedual
 *** TODO todo
 *** DONE done
+** Source Code
+*** C++ Source Code Template
+#+BEGIN_SRC C++ :exports both
+#include <string>
+#include <sstream>  
+#include <iostream>
+using namespace std;
+int main(int argc, char *argv[])
+{
+  int int_val=100;
+  stringstream strm;
+  strm<<int_val;
+  string s=strm.str();
+  cout<<s<<endl;
+  return 0;
+}
+#+END_SRC
+
+#+RESULTS:
+: 100
+*** Emacs Lisp Source Code Template
+#+BEGIN_SRC emacs-lisp :exports both
+(message "Emacs lisp")
+#+END_SRC
+
+#+RESULTS:
+: Emacs lisp
+
 ** Links
    - [[http:www.baidu.com][baidu]] : www.baidu.com  C-c C-l: edit the link
 

@@ -4,6 +4,7 @@
 (require 'cl);common lisp lib
 ;;add whatever package you want here
 (defvar yubao/packages '(
+			 evil
 			 ac-js2
 			 flycheck
 			 helm-ag 
