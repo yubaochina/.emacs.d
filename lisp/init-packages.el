@@ -4,6 +4,7 @@
 (require 'cl);common lisp lib
 ;;add whatever package you want here
 (defvar yubao/packages '(
+			 ggtags
 			 evil
 			 ac-js2
 			 flycheck
@@ -145,5 +146,15 @@
 
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 
+
+(require 'ggtags)
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
+              (ggtags-mode 1))))
+
+
 (provide 'init-packages)
+
+
 
