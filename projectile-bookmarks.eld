@@ -1,0 +1,1 @@
+("~/.emacs.d/" "/usr/src/linux-source-4.10.0/linux-source-4.10.0/" "~/Documents/emacs-c-ide-demo/" "~/Documents/tuhdo.github.io/")

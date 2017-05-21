@@ -4,95 +4,111 @@
 (require 'cl);common lisp lib
 ;;add whatever package you want here
 (defvar yubao/packages '(
-			 ggtags
-			 evil
-			 ac-js2
-			 flycheck
-			 helm-ag 
-			 org-pomodoro
-			 iedit
-			 expand-region
-			 web-mode
-			 reveal-in-osx-finder
-			 popwin
-			 nodejs-repl;need install nodejs in the system
-			 js2-mode
-			 js2-refactor
-			 smartparens
-			 counsel
-			 swiper
-			 hungry-delete
-			 monokai-theme
-			 solarized-theme
-			 company
-			 latex-pretty-symbols
-			 latex-unicode-math-mode
-			 latex-extra
-			 auto-complete-exuberant-ctags
-			 auto-org-md
-			 common-lisp-snippets
-			 company-auctex
-			 company-bibtex
-			 company-dict
-			 company-edbi
-			 company-go
-			 company-php
-			 company-shell
-			 company-web
-			 ctags-update
-			 company-c-headers
-			 ac-html-angular
-			 cdlatex
-			 company-math
-			 org-grep
-			 org-mime
-			 org-pdfview
-			 org-preview-html
-			 latex-preview-pane
-			 ob-translate
-			 solarized-theme
-			 auctex
-			 auctex-latexmk
-			 auto-auto-indent
-			 markdown-mode
-			 matlab-mode
-			 org-ac
-			 ob-http
-			 ob-ipython
-			 ob-php
-			 xcode-mode
-			 window-numbering
-			 window-number
-			 window-layout
-			 web-mode
-			 w3m python
-			 iedit
-			 google-translate
-			 google-maps
-			 google-c-style
-			 flymake-shell
-			 flymake-json
-			 flymake-google-cpplint
-			 flymake-cursor
-			 eide
-			 ecb
-			 cedit
-			 auto-yasnippet
-			 auto-dictionary
-			 auto-complete-pcmp
-			 auto-complete-clang-async
-			 auto-complete-clang
-			 auto-complete-chunk
-			 auto-complete-c-headers
-			 auto-complete-auctex
-			 ac-math
-			 ac-ispell
-			 ac-html
-			 ac-helm
-			 ac-etags
-			 ac-clang
-			 ac-c-headers
-)
+                         ztree
+                         zygospore
+                         helm-gtags
+                         helm
+                         yasnippet
+                         ws-butler
+                         use-package
+                         undo-tree
+                         iedit
+                         dtrt-indent
+                         counsel-projectile
+                         clean-aindent-mode
+                         anzu
+                         workgroups2
+                         rebox2
+                         volatile-highlights
+                         ggtags
+                         evil
+                         ac-js2
+                         flycheck
+                         helm-ag
+                         org-pomodoro
+                         iedit
+                         expand-region
+                         web-mode
+                         reveal-in-osx-finder
+                         popwin
+                         nodejs-repl;need install nodejs in the system
+                         js2-mode
+                         js2-refactor
+                         smartparens
+                         counsel
+                         swiper
+                         hungry-delete
+                         monokai-theme
+                         solarized-theme
+                         company
+                         latex-pretty-symbols
+                         latex-unicode-math-mode
+                         latex-extra
+                         auto-complete-exuberant-ctags
+                         auto-org-md
+                         common-lisp-snippets
+                         company-auctex
+                         company-bibtex
+                         company-dict
+                         company-edbi
+                         company-go
+                         company-php
+                         company-shell
+                         company-web
+                         ctags-update
+                         company-c-headers
+                         ac-html-angular
+                         cdlatex
+                         company-math
+                         org-grep
+                         org-mime
+                         org-pdfview
+                         org-preview-html
+                         latex-preview-pane
+                         ob-translate
+                         solarized-theme
+                         auctex
+                         auctex-latexmk
+                         auto-auto-indent
+                         markdown-mode
+                         matlab-mode
+                         org-ac
+                         ob-http
+                         ob-ipython
+                         ob-php
+                         xcode-mode
+                         window-numbering
+                         window-number
+                         window-layout
+                         web-mode
+                         w3m python
+                         iedit
+                         google-translate
+                         google-maps
+                         google-c-style
+                         flymake-shell
+                         flymake-json
+                         flymake-google-cpplint
+                         flymake-cursor
+                         eide
+                         ecb
+                         cedit
+                         auto-yasnippet
+                         auto-dictionary
+                         auto-complete-pcmp
+                         auto-complete-clang-async
+                         auto-complete-clang
+                         auto-complete-chunk
+                         auto-complete-c-headers
+                         auto-complete-auctex
+                         ac-math
+                         ac-ispell
+                         ac-html
+                         ac-helm
+                         ac-etags
+                         ac-clang
+                         ac-c-headers
+                         )
   "Default packages")
 (setq package-selected-packages  yubao/packages) ;let package-autoremove know my customized packages, ohterwise package-autoremove will delete my customized packages
 
@@ -147,11 +163,12 @@
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 
 
-(require 'ggtags)
-(add-hook 'c-mode-common-hook
-          (lambda ()
-            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
-              (ggtags-mode 1))))
+
+;;configure for rebox2
+(setq rebox-style-loop '(24 16))
+(require 'rebox2)
+(global-set-key [(meta q)] 'rebox-dwim)
+(global-set-key [(shift meta q)] 'rebox-cycle)
 
 
 (provide 'init-packages)

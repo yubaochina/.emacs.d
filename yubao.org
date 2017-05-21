@@ -13,7 +13,8 @@
 (require 'init-keybindings)
 (require 'init-org)
 (require 'init-web-ide)
-(require 'init-cppIde)
+;;(require 'init-cppIde)
+
 ;;;equas to
 ;;(load "init-packages")
 ;;(load "init-ui")
@@ -31,7 +32,199 @@
 (setq custom-file (expand-file-name "lisp/init-custom.el" user-emacs-directory))
 
 (load-file custom-file)
+
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+(add-to-list 'load-path "~/.emacs.d/custom")
+
+(require 'setup-general)
+(if (version< emacs-version "24.4")
+    (require 'setup-ivy-counsel)
+;; If you want to use ggtags, comment this line 
+;;  (require 'setup-helm)
+ (require 'setup-helm-gtags))
+(require 'setup-ggtags)
+(require 'setup-cedet)
+(require 'setup-editing)
+
 #+END_SRC
 
-* configure packages
-** Fix smart parents' bug
+* Concepts
+** Buffer
+In an Emacs session, you may have a lot of buffers, including
+non-file buffers such as shell buffers, email buffers... How do you
+manage buffers when it's getting large? *C-x C-b* executes
+=list-buffers=, provide you a list of buffer in which you can
+search. However, =list-buffers= is a simple command for buffer
+management. Emacs also provides =ibuffer=, which is a superior
+alternative. You will surely want to use =ibuffer=, but first let's
+replace =list-buffers= with =ibuffer= (by placing next directive to your =~/.emacs= file):
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
+#+end_src
+
+* Packages
+** Package: =ztree=
+:PROPERTIES:
+:ID:       509e175b-8d72-472d-ad1c-7e96c647cb77
+:END:
+_Author_: [[https://github.com/fourier][Alexey Veretennikov]], =alexey.veretennikov@gmail.com=
+
+_Homepage_: [[https://github.com/fourier/ztree][Github]]
+
+_Features_:
+
+Ztree is a project dedicated to implementation of several text-tree
+applications inside Emacs. It consists of 2 sub-projects: ztree-diff
+and ztree-dir(the basis of ztree-diff).
+
+- ztree-diff: Perform diff on two directories. Really handy when you
+  want to create a big patch between two directories.
+
+[[file:static/part3/ztree-diff.png][file:static/part3/ztree-diff.png]]
+
+- ztree-dir: a simple tree explorer.
+
+[[file:static/part3/ztree-dir.png][file:static/part3/ztree-dir.png]]
+
+_Installation_:
+
+=M-x list-packages= and select *ztree* package, then install
+it. After finish installing, add this code snippet to activate the
+package:
+
+#+begin_src emacs-lisp
+  ;;;;;;;;;;;;;;;;;;;;;
+  ;; PACKAGE: ztree  ;;
+  ;;                 ;;
+  ;; GROUP: No group ;;
+  ;;;;;;;;;;;;;;;;;;;;;
+  ;; since ztree works with files and directories, let's consider it in
+  ;; group Files
+  (require 'ztree-diff)
+  (require 'ztree-dir)
+#+end_src
+
+_Usage_:
+
+=M-x ztree-diff=, then select the left and right directories to
+compare.
+
+=M-x ztree-dir= to explorer filesystem:
+
+- Open/close directories with double-click, =RET= or =Space= keys.
+- To jump to the parent directory, hit the =Backspace= key.
+- To toggle open/closed state of the subtree of the current directory,
+  hit the x key.
+
+** Browse source tree with =Speedbar= file browser
+:PROPERTIES:
+:ID: speedbar
+:END:
+If you want a static outline tree, Emacs also has a more one:
+=Speedbar=. To use Speed bar, =M-x speedbar= and a frame that contains
+a directory tree appear. In this directory, to the left of a file or
+directory name is an icon with =+= sign in it. You can click the icon
+to open the content of a node. If the node is a file, the children of
+the files are tags (variable and function definitions) of the file; if
+the node is a directory, the children of the node are files in that
+directory. One important thing to remember, Speedbar only lists files
+that match =speedbar-file-regexp=, that contains the extensions for
+common programming languages. If you don't see files in your
+programming languages listed, consider adding it the regexp list. 
+
+*Basic usage*:
+
+- Use *SPC* to open the children of a node.
+
+- *RET* to open the node in another window. If node is a file, open
+  that file; if node is a directory, enter that directory; if node is
+  a tag in a file, jump to the location of that tag in the file.
+
+- *U* to go up parent directory.
+
+- *n* or *p* moves to next or previous node.
+
+- *M-n* or *M-p* moves to next or previous node at the current level.
+
+- *b* switches to buffer list using Speedbar presentation. You can
+  also open children of each buffer.
+
+- *f* switches back to file list.
+
+To enable =speedbar= to show all files:
+
+#+begin_src emacs-lisp
+  (setq speedbar-show-unknown-files t)
+#+end_src
+
+** Package: =sr-speedbar=
+:PROPERTIES:
+:ID:       1824d791-2592-4efa-90b7-845e6a68681d
+:END:
+
+However, you may feel that a frame is difficult to use. To solve this
+issue, you need =sr-speedbar=, which can be installed via
+MELPA.
+
+- To open =sr-speedbar=, execute the command =sr-speedbar-open= or
+  =sr-speedbar-toggle=.
+
+- To close =sr-speedbar=, execute the command =sr-speedbar-close= or
+  =sr-speedbar-toggle= again.
+
+Best is to use =sr-speedbar-toggle= only, for simplicity.
+
+=sr-speedbar= gives the following improvements:
+
+- Automatically switches directory tree - when you switch buffer - to
+  the =default-directory= of current buffer.
+- Use an Emacs window instead of frame, make it easier to use.
+- *C-x 1* deletes every window except Speedbar, so you won't have to
+  open again.
+- You can prevent *C-x o* to jump to =sr-speedbar= window by setting
+  =sr-speedbar-skip-other-window-p= to `t`. You can still move to
+  =sr-speedbar= window using either the mouse or [[http://www.emacswiki.org/emacs-en/WindMove][windmove]].
+
+_Demo_: In the demo, you can see that the function =set-cpu-active= is
+being highlighted. That's what happens when you press *RET* on a tag:
+Speedbar moves to the location of that tag and highlight it. Looking
+at the Speedbar, under =set-cpu-active= node, it contains these
+children:
+
+- The first child is always the return type, =void=.
+- The subsequent children are function parameters. Inside each
+  function parameter node is its type.
+
+[[file:static/c-ide/sr-speedbar.gif][file:static/c-ide/sr-speedbar.gif]]
+
+- The default speedbar window is on the right side, however, I want to change it to the left side
+
+#+BEGIN_SRC emacs-lisp
+;(require 'sr-speedbar)
+  (setq sr-speedbar-right-side nil)
+#+END_SRC
+
+Documentation:
+Show the speedbar to the right side of the current window.
+If nil, the speedbar will appear on the left.
+Default is t.
+
+- SR speedbar Default Width
+#+BEGIN_SRC emacs-lisp
+ (setq sr-speedbar-default-width 50)
+#+END_SRC
+
+- Disabling 'linum-mode' for speedbar when global 'linum-mode' is active
+
+use speedbar-before-popup-hook hook for achieving what you want:
+#+BEGIN_SRC emacs-lisp
+(add-hook 'speedbar-before-popup-hook (lambda () (linum-mode -1)))
+#+END_SRC
+
+
+
+
