@@ -50,7 +50,11 @@
 (require 'setup-editing)
 
 #+END_SRC
-
+* UI and Some Default Configuration
+** line Number
+#+BEGIN_SRC emacs-lisp
+(global-linum-mode t)
+#+END_SRC
 * Concepts
 ** Buffer
 In an Emacs session, you may have a lot of buffers, including
@@ -215,16 +219,12 @@ Default is t.
 
 - SR speedbar Default Width
 #+BEGIN_SRC emacs-lisp
- (setq sr-speedbar-default-width 50)
+ (setq sr-speedbar-default-width 25)
 #+END_SRC
 
 - Disabling 'linum-mode' for speedbar when global 'linum-mode' is active
+Add this after (global-linum-mode t)
 
-use speedbar-before-popup-hook hook for achieving what you want:
 #+BEGIN_SRC emacs-lisp
-(add-hook 'speedbar-before-popup-hook (lambda () (linum-mode -1)))
+  (add-hook 'speedbar-mode-hook (lambda () (linum-mode -1)))
 #+END_SRC
-
-
-
-

@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "org-ac" "org-ac.el" (22797 14631 121787 136000))
+;;;### (autoloads nil "org-ac" "org-ac.el" (22817 29105 121771 930000))
 ;;; Generated autoloads from org-ac.el
 
 (autoload 'org-ac/setup-current-buffer "org-ac" "\

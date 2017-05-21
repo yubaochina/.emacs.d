@@ -1,6 +1,6 @@
 (setq ring-bell-function 'ignore)
-;show line number
-(global-linum-mode t)
+;;show line number
+;;(global-linum-mode t)
 
 (global-auto-revert-mode t)
 

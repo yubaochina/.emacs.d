@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "company-dict" "company-dict.el" (22797 38043
-;;;;;;  705862 816000))
+;;;### (autoloads nil "company-dict" "company-dict.el" (22817 29037
+;;;;;;  978458 797000))
 ;;; Generated autoloads from company-dict.el
 
 (autoload 'company-dict-refresh "company-dict" "\

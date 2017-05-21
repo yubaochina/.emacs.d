@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "workgroups2" "workgroups2.el" (22817 17182
-;;;;;;  187193 107000))
+;;;### (autoloads nil "workgroups2" "workgroups2.el" (22817 28922
+;;;;;;  611555 310000))
 ;;; Generated autoloads from workgroups2.el
 
 (autoload 'workgroups-mode "workgroups2" "\

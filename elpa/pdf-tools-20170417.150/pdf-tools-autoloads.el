@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "pdf-annot" "pdf-annot.el" (22797 35417 901912
-;;;;;;  773000))
+;;;### (autoloads nil "pdf-annot" "pdf-annot.el" (22817 29081 782014
+;;;;;;  352000))
 ;;; Generated autoloads from pdf-annot.el
 
 (autoload 'pdf-annot-minor-mode "pdf-annot" "\
@@ -16,8 +16,8 @@ Support for PDF Annotations.
 
 ;;;***
 
-;;;### (autoloads nil "pdf-history" "pdf-history.el" (22797 35417
-;;;;;;  873920 247000))
+;;;### (autoloads nil "pdf-history" "pdf-history.el" (22817 29081
+;;;;;;  766014 517000))
 ;;; Generated autoloads from pdf-history.el
 
 (autoload 'pdf-history-minor-mode "pdf-history" "\
@@ -33,8 +33,8 @@ may be navigated with the following keys.
 
 ;;;***
 
-;;;### (autoloads nil "pdf-isearch" "pdf-isearch.el" (22797 35418
-;;;;;;  49873 231000))
+;;;### (autoloads nil "pdf-isearch" "pdf-isearch.el" (22817 29081
+;;;;;;  934012 785000))
 ;;; Generated autoloads from pdf-isearch.el
 
 (autoload 'pdf-isearch-minor-mode "pdf-isearch" "\
@@ -72,8 +72,8 @@ that not every isearch command work as expected.
 
 ;;;***
 
-;;;### (autoloads nil "pdf-links" "pdf-links.el" (22797 35417 933904
-;;;;;;  232000))
+;;;### (autoloads nil "pdf-links" "pdf-links.el" (22817 29081 818013
+;;;;;;  981000))
 ;;; Generated autoloads from pdf-links.el
 
 (autoload 'pdf-links-minor-mode "pdf-links" "\
@@ -105,8 +105,8 @@ scroll the current page.
 
 ;;;***
 
-;;;### (autoloads nil "pdf-misc" "pdf-misc.el" (22797 35417 889915
-;;;;;;  976000))
+;;;### (autoloads nil "pdf-misc" "pdf-misc.el" (22817 29081 774014
+;;;;;;  434000))
 ;;; Generated autoloads from pdf-misc.el
 
 (autoload 'pdf-misc-minor-mode "pdf-misc" "\
@@ -133,8 +133,8 @@ Provide a right-click context menu in PDF buffers.
 
 ;;;***
 
-;;;### (autoloads nil "pdf-occur" "pdf-occur.el" (22797 35417 917908
-;;;;;;  502000))
+;;;### (autoloads nil "pdf-occur" "pdf-occur.el" (22817 29081 802014
+;;;;;;  146000))
 ;;; Generated autoloads from pdf-occur.el
 
 (autoload 'pdf-occur "pdf-occur" "\
@@ -197,8 +197,8 @@ and otherwise fallback to `dired-do-search'.
 
 ;;;***
 
-;;;### (autoloads nil "pdf-outline" "pdf-outline.el" (22797 35418
-;;;;;;  45874 302000))
+;;;### (autoloads nil "pdf-outline" "pdf-outline.el" (22817 29081
+;;;;;;  930012 826000))
 ;;; Generated autoloads from pdf-outline.el
 
 (autoload 'pdf-outline-minor-mode "pdf-outline" "\
@@ -227,8 +227,8 @@ Enable imenu in the current PDF buffer.
 
 ;;;***
 
-;;;### (autoloads nil "pdf-sync" "pdf-sync.el" (22797 35417 941902
-;;;;;;  96000))
+;;;### (autoloads nil "pdf-sync" "pdf-sync.el" (22817 29081 822013
+;;;;;;  939000))
 ;;; Generated autoloads from pdf-sync.el
 
 (autoload 'pdf-sync-minor-mode "pdf-sync" "\
@@ -261,8 +261,8 @@ with AUCTeX.
 
 ;;;***
 
-;;;### (autoloads nil "pdf-tools" "pdf-tools.el" (22797 35417 949899
-;;;;;;  961000))
+;;;### (autoloads nil "pdf-tools" "pdf-tools.el" (22817 29081 834013
+;;;;;;  816000))
 ;;; Generated autoloads from pdf-tools.el
 
 (defvar pdf-tools-handle-upgrades t "\
@@ -305,8 +305,8 @@ See `pdf-view-mode' and `pdf-tools-enabled-modes'.
 
 ;;;***
 
-;;;### (autoloads nil "pdf-view" "pdf-view.el" (22797 35417 945901
-;;;;;;  28000))
+;;;### (autoloads nil "pdf-view" "pdf-view.el" (22817 29081 826013
+;;;;;;  898000))
 ;;; Generated autoloads from pdf-view.el
 
 (autoload 'pdf-view-bookmark-jump-handler "pdf-view" "\
@@ -318,8 +318,8 @@ See also `pdf-view-bookmark-make-record'.
 
 ;;;***
 
-;;;### (autoloads nil "pdf-virtual" "pdf-virtual.el" (22797 35417
-;;;;;;  929905 299000))
+;;;### (autoloads nil "pdf-virtual" "pdf-virtual.el" (22817 29081
+;;;;;;  810014 63000))
 ;;; Generated autoloads from pdf-virtual.el
 
 (autoload 'pdf-virtual-edit-mode "pdf-virtual" "\
@@ -355,7 +355,7 @@ Enable recognition and handling of VPDF files.
 ;;;***
 
 ;;;### (autoloads nil nil ("pdf-cache.el" "pdf-dev.el" "pdf-info.el"
-;;;;;;  "pdf-tools-pkg.el" "pdf-util.el") (22797 35418 41875 373000))
+;;;;;;  "pdf-tools-pkg.el" "pdf-util.el") (22817 29081 926012 867000))
 
 ;;;***
 

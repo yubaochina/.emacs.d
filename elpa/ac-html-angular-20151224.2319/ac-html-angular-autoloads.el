@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "ac-html-angular" "ac-html-angular.el" (22797
-;;;;;;  37101 88887 621000))
+;;;### (autoloads nil "ac-html-angular" "ac-html-angular.el" (22817
+;;;;;;  29071 886115 979000))
 ;;; Generated autoloads from ac-html-angular.el
 
 (autoload 'ac-html-angular+ "ac-html-angular" "\
@@ -16,8 +16,8 @@ Enable angular ac-html completion
 
 ;;;***
 
-;;;### (autoloads nil nil ("ac-html-angular-pkg.el") (22797 37101
-;;;;;;  104886 875000))
+;;;### (autoloads nil nil ("ac-html-angular-pkg.el") (22817 29071
+;;;;;;  890115 939000))
 
 ;;;***
 

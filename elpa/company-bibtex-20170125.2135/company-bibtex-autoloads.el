@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "company-bibtex" "company-bibtex.el" (22797
-;;;;;;  38045 405869 793000))
+;;;### (autoloads nil "company-bibtex" "company-bibtex.el" (22817
+;;;;;;  29036 642472 127000))
 ;;; Generated autoloads from company-bibtex.el
 
 (autoload 'company-bibtex "company-bibtex" "\

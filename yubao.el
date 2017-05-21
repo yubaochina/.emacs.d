@@ -47,6 +47,8 @@
 (require 'setup-cedet)
 (require 'setup-editing)
 
+(global-linum-mode t)
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;;;;;;;;;;;;;;;;;;;;
@@ -64,6 +66,6 @@
 ;(require 'sr-speedbar)
   (setq sr-speedbar-right-side nil)
 
-(setq sr-speedbar-default-width 50)
+(setq sr-speedbar-default-width 30)
 
-(add-hook 'speedbar-before-popup-hook (lambda () (linum-mode -1)))
+(add-hook 'speedbar-mode-hook (lambda () (linum-mode -1)))

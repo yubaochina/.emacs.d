@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil nil ("ac-clang-pkg.el" "ac-clang.el") (22790
-;;;;;;  36031 656773 429000))
+;;;### (autoloads nil nil ("ac-clang-pkg.el" "ac-clang.el") (22817
+;;;;;;  29209 468645 561000))
 
 ;;;***
 

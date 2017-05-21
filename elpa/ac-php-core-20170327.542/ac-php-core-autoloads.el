@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "ac-php-core" "ac-php-core.el" (22797 38032
-;;;;;;  413808 190000))
+;;;### (autoloads nil "ac-php-core" "ac-php-core.el" (22817 29061
+;;;;;;  58226 377000))
 ;;; Generated autoloads from ac-php-core.el
 
 (autoload 'ac-php-core-eldoc-setup "ac-php-core" "\
@@ -15,7 +15,7 @@ Set up eldoc function and enable eldoc-mode.
 ;;;***
 
 ;;;### (autoloads nil nil ("ac-php-comm-tags-data.el" "ac-php-core-pkg.el")
-;;;;;;  (22797 38032 417808 213000))
+;;;;;;  (22817 29061 62226 336000))
 
 ;;;***
 

@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "rebox2" "rebox2.el" (22817 8584 87448 809000))
+;;;### (autoloads nil "rebox2" "rebox2.el" (22817 28923 819544 441000))
 ;;; Generated autoloads from rebox2.el
 
 (autoload 'rebox-mode "rebox2" "\

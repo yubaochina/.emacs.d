@@ -3,7 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil nil ("org-pdfview.el") (22797 35420 93325 117000))
+;;;### (autoloads nil nil ("org-pdfview.el") (22817 29084 277988
+;;;;;;  603000))
 
 ;;;***
 

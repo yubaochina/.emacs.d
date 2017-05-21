@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "cedit" "cedit.el" (22790 44821 136199 954000))
+;;;### (autoloads nil "cedit" "cedit.el" (22817 29153 477258 222000))
 ;;; Generated autoloads from cedit.el
 
 (autoload 'cedit-forward-char "cedit" "\

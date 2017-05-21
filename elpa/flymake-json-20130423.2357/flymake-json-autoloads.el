@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "flymake-json" "flymake-json.el" (22790 41852
-;;;;;;  15051 743000))
+;;;### (autoloads nil "flymake-json" "flymake-json.el" (22817 29129
+;;;;;;  901510 561000))
 ;;; Generated autoloads from flymake-json.el
 
 (autoload 'flymake-json-load "flymake-json" "\

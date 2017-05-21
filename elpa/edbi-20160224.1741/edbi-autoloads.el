@@ -3,7 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "edbi" "edbi.el" (22797 38041 241852 153000))
+;;;### (autoloads nil "edbi" "edbi.el" (22817 29043 322405 325000))
 ;;; Generated autoloads from edbi.el
 
 (autoload 'edbi:open-db-viewer "edbi" "\
@@ -13,7 +13,7 @@ Open Database viewer buffer.
 
 ;;;***
 
-;;;### (autoloads nil nil ("edbi-pkg.el") (22797 38041 233852 118000))
+;;;### (autoloads nil nil ("edbi-pkg.el") (22817 29043 310405 445000))
 
 ;;;***
 

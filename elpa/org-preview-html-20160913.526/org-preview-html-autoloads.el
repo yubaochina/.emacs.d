@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "org-preview-html" "org-preview-html.el" (22797
-;;;;;;  35411 163694 123000))
+;;;### (autoloads nil "org-preview-html" "org-preview-html.el" (22817
+;;;;;;  29085 33980 799000))
 ;;; Generated autoloads from org-preview-html.el
 
 (autoload 'org-preview-html/preview "org-preview-html" "\

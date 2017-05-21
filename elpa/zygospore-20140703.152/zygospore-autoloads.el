@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "zygospore" "zygospore.el" (22817 18034 197563
-;;;;;;  38000))
+;;;### (autoloads nil "zygospore" "zygospore.el" (22817 28858 112114
+;;;;;;  213000))
 ;;; Generated autoloads from zygospore.el
 
 (autoload 'zygospore-toggle-delete-other-windows "zygospore" "\

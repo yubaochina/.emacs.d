@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "dtrt-indent" "dtrt-indent.el" (22817 18040
-;;;;;;  997613 15000))
+;;;### (autoloads nil "dtrt-indent" "dtrt-indent.el" (22817 28904
+;;;;;;  523716 308000))
 ;;; Generated autoloads from dtrt-indent.el
 
 (defvar dtrt-indent-mode nil "\
@@ -36,7 +36,7 @@ use either \\[customize] or the function `dtrt-indent-mode'.")
 ;;;***
 
 ;;;### (autoloads nil nil ("dtrt-indent-diag.el" "dtrt-indent-pkg.el")
-;;;;;;  (22817 18041 1613 45000))
+;;;;;;  (22817 28904 527716 272000))
 
 ;;;***
 

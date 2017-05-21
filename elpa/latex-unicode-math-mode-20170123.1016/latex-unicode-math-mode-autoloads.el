@@ -4,7 +4,7 @@
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
 ;;;### (autoloads nil "latex-unicode-math-mode" "latex-unicode-math-mode.el"
-;;;;;;  (22797 61356 626328 871000))
+;;;;;;  (22817 28980 615018 320000))
 ;;; Generated autoloads from latex-unicode-math-mode.el
 
 (autoload 'latex-unicode-math-mode "latex-unicode-math-mode" "\
@@ -19,8 +19,8 @@ Enable the Unicode math input method everywhere in the buffer.
 
 ;;;***
 
-;;;### (autoloads nil nil ("latex-unicode-math-mode-pkg.el") (22797
-;;;;;;  61356 638336 213000))
+;;;### (autoloads nil nil ("latex-unicode-math-mode-pkg.el") (22817
+;;;;;;  28980 619018 282000))
 
 ;;;***
 

@@ -4,7 +4,7 @@
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
 ;;;### (autoloads nil "es-lib-core-functions" "es-lib-core-functions.el"
-;;;;;;  (22797 14640 65812 866000))
+;;;;;;  (22817 29091 693911 861000))
 ;;; Generated autoloads from es-lib-core-functions.el
 
 (autoload 'es-kill-buffer-dont-ask "es-lib-core-functions" "\
@@ -92,7 +92,7 @@ Ack won't prompt for a directory name in that buffer.
 ;;;### (autoloads nil nil ("es-lib-buffer-local-set-key.el" "es-lib-core-macros.el"
 ;;;;;;  "es-lib-lexical.el" "es-lib-pkg.el" "es-lib-readme-generator.el"
 ;;;;;;  "es-lib-text-navigate.el" "es-lib-total-line.el" "es-lib.el")
-;;;;;;  (22797 14640 93812 944000))
+;;;;;;  (22817 29091 721911 570000))
 
 ;;;***
 

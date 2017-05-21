@@ -4,6 +4,8 @@
 (require 'cl);common lisp lib
 ;;add whatever package you want here
 (defvar yubao/packages '(
+                         magit
+                         sr-speedbar
                          ztree
                          zygospore
                          helm-gtags

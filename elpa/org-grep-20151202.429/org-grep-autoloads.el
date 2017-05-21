@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "org-grep" "org-grep.el" (22797 35422 344717
-;;;;;;  498000))
+;;;### (autoloads nil "org-grep" "org-grep.el" (22817 29076 386069
+;;;;;;  854000))
 ;;; Generated autoloads from org-grep.el
 
 (autoload 'org-grep "org-grep" "\

@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "xcode-mode" "xcode-mode.el" (22792 35155 232962
-;;;;;;  938000))
+;;;### (autoloads nil "xcode-mode" "xcode-mode.el" (22817 29109 105730
+;;;;;;  188000))
 ;;; Generated autoloads from xcode-mode.el
 
 (autoload 'xcode-mode "xcode-mode" "\

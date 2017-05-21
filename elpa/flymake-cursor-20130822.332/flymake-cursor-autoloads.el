@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "flymake-cursor" "flymake-cursor.el" (22790
-;;;;;;  43773 825172 110000))
+;;;### (autoloads nil "flymake-cursor" "flymake-cursor.el" (22817
+;;;;;;  29131 461493 959000))
 ;;; Generated autoloads from flymake-cursor.el
 
 (autoload 'flyc/show-fly-error-at-point-now "flymake-cursor" "\

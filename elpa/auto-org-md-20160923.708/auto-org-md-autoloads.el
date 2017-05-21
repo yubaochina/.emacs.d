@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "auto-org-md" "auto-org-md.el" (22797 38049
-;;;;;;  149883 996000))
+;;;### (autoloads nil "auto-org-md" "auto-org-md.el" (22817 29033
+;;;;;;  362504 790000))
 ;;; Generated autoloads from auto-org-md.el
 
 (autoload 'auto-org-md-export "auto-org-md" "\

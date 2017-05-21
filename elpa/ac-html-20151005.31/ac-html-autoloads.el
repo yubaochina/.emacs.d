@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "ac-html-core" "ac-html-core.el" (22790 35919
-;;;;;;  64359 741000))
+;;;### (autoloads nil "ac-html-core" "ac-html-core.el" (22817 29200
+;;;;;;  480745 118000))
 ;;; Generated autoloads from ac-html-core.el
 
 (autoload 'ac-html-define-data-provider "ac-html-core" "\
@@ -31,7 +31,7 @@ Define ac-html lang with this macro.
 
 ;;;### (autoloads nil nil ("ac-haml.el" "ac-html-default-data-provider.el"
 ;;;;;;  "ac-html-pkg.el" "ac-html-testing-data-provider.el" "ac-html.el"
-;;;;;;  "ac-jade.el" "ac-slim.el") (22790 35919 96360 934000))
+;;;;;;  "ac-jade.el" "ac-slim.el") (22817 29200 504744 852000))
 
 ;;;***
 

@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil nil ("auto-complete-chunk.el") (22790 37258
-;;;;;;  950059 926000))
+;;;### (autoloads nil nil ("auto-complete-chunk.el") (22817 29158
+;;;;;;  5209 360000))
 
 ;;;***
 

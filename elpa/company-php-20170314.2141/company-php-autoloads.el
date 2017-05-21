@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "company-php" "company-php.el" (22797 38033
-;;;;;;  433813 729000))
+;;;### (autoloads nil "company-php" "company-php.el" (22817 29062
+;;;;;;  306213 695000))
 ;;; Generated autoloads from company-php.el
 
 (autoload 'company-ac-php-backend "company-php" "\

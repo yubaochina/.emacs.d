@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "company-math" "company-math.el" (22797 35429
-;;;;;;  958637 671000))
+;;;### (autoloads nil "company-math" "company-math.el" (22817 29075
+;;;;;;  550078 436000))
 ;;; Generated autoloads from company-math.el
 
 (autoload 'company-latex-commands "company-math" "\

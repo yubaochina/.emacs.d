@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "js2-refactor" "js2-refactor.el" (22806 28248
-;;;;;;  311160 884000))
+;;;### (autoloads nil "js2-refactor" "js2-refactor.el" (22817 28964
+;;;;;;  395171 541000))
 ;;; Generated autoloads from js2-refactor.el
 
 (autoload 'js2-refactor-mode "js2-refactor" "\
@@ -24,8 +24,8 @@ Add js2r keybindings using the modifier MODIFIER.
 
 ;;;***
 
-;;;### (autoloads nil "js2r-vars" "js2r-vars.el" (22806 28248 283160
-;;;;;;  418000))
+;;;### (autoloads nil "js2r-vars" "js2r-vars.el" (22817 28964 363171
+;;;;;;  842000))
 ;;; Generated autoloads from js2r-vars.el
 
 (autoload 'js2r-extract-var "js2r-vars" "\
@@ -38,7 +38,7 @@ Add js2r keybindings using the modifier MODIFIER.
 ;;;### (autoloads nil nil ("js2-refactor-pkg.el" "js2r-conditionals.el"
 ;;;;;;  "js2r-conveniences.el" "js2r-formatting.el" "js2r-functions.el"
 ;;;;;;  "js2r-helpers.el" "js2r-iife.el" "js2r-paredit.el" "js2r-wrapping.el")
-;;;;;;  (22806 28248 307160 817000))
+;;;;;;  (22817 28964 391171 579000))
 
 ;;;***
 
