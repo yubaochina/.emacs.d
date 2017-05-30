@@ -50,6 +50,7 @@
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
  '(preview-image-type (quote dvipng))
+ '(truncate-partial-width-windows nil)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote

@@ -66,6 +66,6 @@
 ;(require 'sr-speedbar)
   (setq sr-speedbar-right-side nil)
 
-(setq sr-speedbar-default-width 30)
+(setq sr-speedbar-default-width 25)
 
 (add-hook 'speedbar-mode-hook (lambda () (linum-mode -1)))
