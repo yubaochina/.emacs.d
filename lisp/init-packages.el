@@ -4,6 +4,10 @@
 (require 'cl);common lisp lib
 ;;add whatever package you want here
 (defvar yubao/packages '(
+                         cmake-font-lock
+                         cmake-ide
+                         cmake-mode
+                         cmake-project
                          magit
                          sr-speedbar
                          ztree
