@@ -55,6 +55,11 @@
 #+BEGIN_SRC emacs-lisp
 (global-linum-mode t)
 #+END_SRC
+** set-mark-command
+#+BEGIN_SRC emacs-lisp
+(global-unset-key (kbd "C-SPC"))  
+(global-set-key (kbd "M-SPC") 'set-mark-command) 
+#+END_SRC
 * Concepts
 ** Buffer
 In an Emacs session, you may have a lot of buffers, including
@@ -228,3 +233,10 @@ Add this after (global-linum-mode t)
 #+BEGIN_SRC emacs-lisp
   (add-hook 'speedbar-mode-hook (lambda () (linum-mode -1)))
 #+END_SRC
+** C#
+#+BEGIN_SRC  emacs-lisp
+(add-hook 'csharp-mode-hook 'omnisharp-mode)
+#+END_SRC
+
+
+
