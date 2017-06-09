@@ -55,11 +55,6 @@
 #+BEGIN_SRC emacs-lisp
 (global-linum-mode t)
 #+END_SRC
-** set-mark-command
-#+BEGIN_SRC emacs-lisp
-(global-unset-key (kbd "C-SPC"))  
-(global-set-key (kbd "M-SPC") 'set-mark-command) 
-#+END_SRC
 * Concepts
 ** Buffer
 In an Emacs session, you may have a lot of buffers, including
