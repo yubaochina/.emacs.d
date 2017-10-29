@@ -69,3 +69,5 @@
 (setq sr-speedbar-default-width 25)
 
 (add-hook 'speedbar-mode-hook (lambda () (linum-mode -1)))
+
+(add-hook 'csharp-mode-hook 'omnisharp-mode)

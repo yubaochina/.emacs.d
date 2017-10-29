@@ -1,7 +1,7 @@
 
 (when (>= emacs-major-version 24)
                                         ;  (add-to-list 'package-archives  '("melpa" . "https://melpa.org/packages/") t)
-  (add-to-list 'package-archives '("melpa" . "	http://elpa.emacs-china.org/melpa-stable/")
+  (add-to-list 'package-archives '("melpa" . "http://elpa.emacs-china.org/melpa-stable/")
                )
   )
 (require 'cl);common lisp lib
