@@ -636,6 +636,9 @@ lisp statement.
    All the name should be have a prefix, such that the naming conflicts could be minimal.
    - Define your abbrevs
      
+* Build C/C++ IDE
+** gtags
+
 * Reference
 1. [[http://book.emacs-china.org/][MasterEmacsIn21Days]]
 2. [[http://book.emacs-china.org/#orgheadline26][spacemacsRocks]]

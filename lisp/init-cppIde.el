@@ -41,6 +41,8 @@
 ;;you can use system-include-path for setting up the system header file locations, turn on automatic reparsing of open buffers in semantic
 (global-semantic-idle-scheduler-mode 1)
 
+(setq-local imenu-create-index-function #'ggtags-build-imenu-index)
+
 (provide 'init-cppIde)
 
 
