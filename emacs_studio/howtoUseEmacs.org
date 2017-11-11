@@ -138,6 +138,14 @@ Use "C-h v => major-mode" to check the current value of major mode
 
 ** Customize variable, group, mode, function
    
+* compile .el files
+** How to compile or recompile a directory
+C-u 0 M-x byte-recompile-directory
+
+will compile all the .el files in the directory and in all subdirectories below.
+
+The C-u 0 part is to make it not ask about every .el file that does not have a .elc counterpart.
+
 * Configuration
 ** How to organize your configs  
    - init-packages.el

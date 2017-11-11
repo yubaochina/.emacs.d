@@ -27,19 +27,16 @@
                          clean-aindent-mode
                          anzu
                          workgroups2
-                         rebox2
                          volatile-highlights
                          ggtags
                          evil
                          ac-js2
                          flycheck
                          helm-ag
-                         org-pomodoro
                          iedit
                          expand-region
                          web-mode
                          reveal-in-osx-finder
-                         popwin
                          nodejs-repl;need install nodejs in the system
                          js2-mode
                          js2-refactor
@@ -69,10 +66,8 @@
                          ac-html-angular
                          cdlatex
                          company-math
-                         org-grep
                          org-mime
                          org-pdfview
-                         org-preview-html
                          latex-preview-pane
                          ob-translate
                          solarized-theme
@@ -161,24 +156,6 @@
 
 ;;load theme
 (load-theme 'monokai t)
-
-
-;;configure popwin
-(require 'popwin)
-(popwin-mode 1)
-
-(add-hook 'js2-mode-hook 'flycheck-mode)
-
-(add-hook 'prog-mode-hook #'yas-minor-mode)
-
-
-
-;;configure for rebox2
-(setq rebox-style-loop '(24 16))
-(require 'rebox2)
-(global-set-key [(meta q)] 'rebox-dwim)
-(global-set-key [(shift meta q)] 'rebox-cycle)
-
 
 (provide 'init-packages)
 

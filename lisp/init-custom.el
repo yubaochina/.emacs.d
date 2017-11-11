@@ -29,6 +29,7 @@
  '(magit-diff-use-overlays nil)
  '(next-line-add-newlines t)
  '(nodejs-repl-command "nodejs")
+ '(org-babel-C++-compiler "g++")
  '(org-babel-load-languages
    (quote
     ((latex . t)
@@ -47,7 +48,7 @@
      (lisp . t))))
  '(package-selected-packages
    (quote
-    (ham-mode markdown-mode+ markdown-preview-eww markdown-preview-mode markdown-toc markdownfmt markup omnisharp cmake-ide cmake-mode cmake-project helm-projectile helm-swoop zygospore helm-gtags helm yasnippet ws-butler use-package undo-tree iedit dtrt-indent counsel-projectile clean-aindent-mode anzu workgroups2 rebox2 volatile-highlights ggtags evil ac-js2 flycheck helm-ag org-pomodoro iedit expand-region web-mode reveal-in-osx-finder popwin nodejs-repl js2-mode js2-refactor smartparens counsel swiper hungry-delete monokai-theme solarized-theme company latex-pretty-symbols latex-unicode-math-mode latex-extra auto-complete-exuberant-ctags auto-org-md common-lisp-snippets company-auctex company-bibtex company-dict company-edbi company-go company-php company-shell company-web ctags-update company-c-headers ac-html-angular cdlatex company-math org-grep org-mime org-pdfview org-preview-html latex-preview-pane ob-translate solarized-theme auctex auctex-latexmk auto-auto-indent markdown-mode matlab-mode org-ac ob-http ob-ipython ob-php xcode-mode window-numbering window-number window-layout web-mode w3m python iedit google-translate google-maps google-c-style flymake-shell flymake-json flymake-google-cpplint flymake-cursor eide ecb cedit auto-yasnippet auto-dictionary auto-complete-pcmp auto-complete-clang-async auto-complete-clang auto-complete-chunk auto-complete-c-headers auto-complete-auctex ac-math ac-ispell ac-html ac-helm ac-etags ac-clang ac-c-headers)))
+    (ob-blockdiag ham-mode markdown-mode+ markdown-preview-eww markdown-preview-mode markdown-toc markdownfmt markup omnisharp cmake-ide cmake-mode cmake-project helm-projectile helm-swoop zygospore helm-gtags helm yasnippet ws-butler use-package undo-tree iedit dtrt-indent counsel-projectile clean-aindent-mode anzu workgroups2 rebox2 volatile-highlights ggtags evil ac-js2 flycheck helm-ag expand-region web-mode reveal-in-osx-finder popwin nodejs-repl js2-mode js2-refactor smartparens counsel swiper hungry-delete monokai-theme solarized-theme company latex-pretty-symbols latex-unicode-math-mode latex-extra auto-complete-exuberant-ctags auto-org-md common-lisp-snippets company-auctex company-bibtex company-dict company-edbi company-go company-php company-shell company-web ctags-update company-c-headers ac-html-angular cdlatex company-math org-mime org-pdfview org-preview-html latex-preview-pane ob-translate solarized-theme auctex auctex-latexmk auto-auto-indent markdown-mode matlab-mode org-ac ob-http ob-ipython ob-php xcode-mode window-numbering window-number window-layout web-mode w3m python iedit google-translate google-maps google-c-style flymake-shell flymake-json flymake-google-cpplint flymake-cursor eide ecb cedit auto-yasnippet auto-dictionary auto-complete-pcmp auto-complete-clang-async auto-complete-clang auto-complete-chunk auto-complete-c-headers auto-complete-auctex ac-math ac-ispell ac-html ac-helm ac-etags ac-clang ac-c-headers)))
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
  '(preview-image-type (quote dvipng))

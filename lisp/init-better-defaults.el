@@ -49,11 +49,6 @@
 ;;start eide
 					;(eide-start)
 
-
-;;config hungry-delete mode
-(require 'hungry-delete)
-(global-hungry-delete-mode)
-
 (defun indent-buffer ()
   "Indent the currently visitied buffer."
   (interactive)
@@ -85,9 +80,6 @@
 					 try-complete-lisp-symbol))
 
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq dired-recursive-copies 'always)
-(setq dired-recursive-deletes 'always)
-
 (put 'dired-find-alternate-file 'disabled nil)
 
 (require 'dired-x)
