@@ -9,19 +9,6 @@
 (add-hook 'c++-mode-hook 'my:ac-c-header-init)
 (add-hook 'c-mode-hook 'my:ac-c-header-init)
 
-
-;; start flymake-google-init()
-;; let's define a function for flymake initialization
-;;cpplint is required
-;;> sudo pip search cpplint
-;;>sudo pip install cpplint
-(defun my:flymake-google-init ()
-  (require 'flymake-google-cpplint)
-  (custom-set-variables
-   '(flymake-google-cpplint-command "/usr/local/bin/cpplint"))
-  )
-
-;;turn on semantic
 (semantic-mode 1)
 ;;let's deinfe a function which adds semantics as a suggestion backend to auto complete and hook this funciton to c-mode-common-hook
 (defun my:add-semantic-to-autocomplete ()
