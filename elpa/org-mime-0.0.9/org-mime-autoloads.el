@@ -3,8 +3,7 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "org-mime" "org-mime.el" (23046 22049 539342
-;;;;;;  661000))
+;;;### (autoloads nil "org-mime" "org-mime.el" (23170 13838 0 0))
 ;;; Generated autoloads from org-mime.el
 
 (autoload 'org-mime-org-buffer-htmlize "org-mime" "\
