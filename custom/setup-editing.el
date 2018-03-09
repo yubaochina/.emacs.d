@@ -37,11 +37,6 @@
                                           newline-mark))
                             (whitespace-mode 1)))
 
-;; Package: volatile-highlights
-;; GROUP: Editing -> Volatile Highlights
-(use-package volatile-highlights
-  :init
-  (volatile-highlights-mode t))
 
 ;; Package: undo-tree
 ;; GROUP: Editing -> Undo -> Undo Tree
@@ -57,11 +52,6 @@
   :defer t
   :init
   (add-hook 'prog-mode-hook 'yas-minor-mode))
-
-;; Package: clean-aindent-mode
-(use-package clean-aindent-mode
-  :init
-  (add-hook 'prog-mode-hook 'clean-aindent-mode))
 
 ;; Package: dtrt-indent
 (use-package dtrt-indent
