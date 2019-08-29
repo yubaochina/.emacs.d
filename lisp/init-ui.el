@@ -1,22 +1,20 @@
-;;config the default behaviour
-;disable tool-bar minor mode
-(tool-bar-mode -1)
-;disable scroll bar
-(scroll-bar-mode -1)
-(setq cursor-type 'bar)
+;;load theme
+(load-theme 'monokai t)
 
+;;solarized
+;(add-to-list 'custom-theme-load-path "~/.emacs.d/packages/solarized")
+(add-to-list 'load-path "~/.emacs.d/packages/solarized")
+;(require 'color-theme-solarized)
+;(load-theme 'solarized t)
 
-;disable the start up help window
-(setq inhibit-startup-message t)
+(global-visual-line-mode 1)
+(setq word-wrap t)
 
-;;full screen
-(setq initial-frame-alist (quote ((fullscreen . maximized))))
+(global-hl-line-mode)
+(global-linum-mode t)
 
-(setq-default cursor-type 'bar)
-
-
-;;highlight the current line
-;(global-hl-line-mode t)
-
+(require 'window-number)
+(window-number-mode)
+(window-number-meta-mode)
 
 (provide 'init-ui)
