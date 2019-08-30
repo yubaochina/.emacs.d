@@ -1,0 +1,34 @@
+* Installation
+** Install from apt-get
+#+begin_src 
+sudo add-apt-repository -yu ppa:kelleyk/emacs
+sudo apt-get install  emacs26
+#+end_src
+** Install from source code
+#+begin_example
+git clone  https://github.com/emacs-mirror/emacs.git
+#+end_example
+
+* Config File
+#+begin_example
+git clone --recursive git@github.com:yubaoliu/dotfiles.git
+#+end_example
+
+standalone version:
+
+#+begin_example
+git clone --recursive https://github.com/yubaoliu/emacs.git .emacs.d
+#+end_example
+
+Compile /org-mode/ after /git clone/:
+
+#+begin_example
+cd .emacs.d/packages/org-mode/
+make all
+#+end_example
+
+
+
+* Tutorial
+- Emacs Mini Manual: https://tuhdo.github.io/emacs-tutor.html
+  
