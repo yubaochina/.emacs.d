@@ -85,7 +85,7 @@
 						   :with-latex t
                            :base-directory "~/data/Project/yubaoliu.github.io/_drafts"
                            :base-extension "org"
-                           :publishing-directory "~/data/Project/yubaoliu.github.io/_posts"
+                           :publishing-directory "~/data/Project/yubaoliu.github.io/_drafts"
                            :publishing-function org-html-publish-to-html
                            :headline-levels 4
                            :section-numbers t
@@ -95,7 +95,12 @@
                            :recursive t
                            :make-index t
                            :html-extension "html"
-                           :body-only t)
+                           :body-only t
+   						   :auto-sitemap t
+						   :sitemap-filename "sitemap.org"
+						   :sitemap-title "sitemap"
+						   :sitemap-sort-folders "last"
+						   )
 			              ("post"
                            :base-directory ,(org2jekyll-input-directory  org2jekyll-jekyll-drafts-dir)
                            :base-extension "org"
@@ -112,10 +117,6 @@
                            :body-only t
 						   :with-date t
 						   :auto-preamble t
-						   :auto-sitemap t
-						   :sitemap-filename "sitemap.org"
-						   :sitemap-title "sitemap"
-						   :sitemap-sort-folders "last"
 						   :with-title t)
                           ("images"
                            :base-directory ,(org2jekyll-input-directory "img")
@@ -157,9 +158,11 @@
  (interactive)
   (insert "#+EXPORT_FILE_NAME: 
 #+TITLE: 
+#+DATE: 
 #+KEYWORDS: 
-#+OPTIONS: body-only:t
-#+subtitle: 
+#+SUBTITLE:
+#+TAGS:
+#+OPTIONS: H:3 num:t tags:t toc:t timestamps:t
 "))
 			
 (require 'org-page)

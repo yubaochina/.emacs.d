@@ -6,7 +6,13 @@ sudo apt-get install  emacs26
 #+end_src
 ** Install from source code
 #+begin_example
+sudo apt install libxpm-dev libgnutls-dev
+
 git clone  https://github.com/emacs-mirror/emacs.git
+./autogen.sh
+./configure --prefix=<>
+make
+make install
 #+end_example
 
 * Config File

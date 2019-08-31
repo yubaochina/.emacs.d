@@ -2,6 +2,7 @@
 *.dat
 *.cache
 *.log
+ido.last
 
 srecode-map.el
 
