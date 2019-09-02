@@ -117,7 +117,24 @@
                            :body-only t
 						   :with-date t
 						   :auto-preamble t
-						   :with-title t)
+						   :with-title t
+						   :with-author t
+						   :archived-trees t
+						   :with-clocks t
+						   :with-date t
+						   :with-email t
+						   :with-emphasize t
+						   :with-footnotes t
+						   :with-latex t
+						   :with-planning t
+						   :with-properties t
+						   :with-special-strings t
+						   :with-tables t
+						   :with-tags t
+						   :with-tasks t
+						   :with-timestamps t
+						   :with-todo-keywords t
+						   )
                           ("images"
                            :base-directory ,(org2jekyll-input-directory "img")
                            :base-extension "jpg\\|gif\\|png"
