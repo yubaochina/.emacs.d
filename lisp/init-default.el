@@ -1,4 +1,5 @@
 (ido-mode)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (setq-default auto-save-timeout 15) ; 15秒无动作,自动保存
 (setq-default auto-save-interval 100) ; 100个字符间隔, 自动保存
