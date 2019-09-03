@@ -1,6 +1,7 @@
 (cd "~/data/Project/blog")
 
 (ido-mode)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (require 'fcitx)
 (setq fcitx-use-dbus t)

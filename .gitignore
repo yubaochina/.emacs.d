@@ -3,6 +3,7 @@
 *.cache
 *.log
 ido.last
+bookmarks
 
 srecode-map.el
 
