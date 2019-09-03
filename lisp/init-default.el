@@ -1,4 +1,9 @@
+(cd "~/data/Project/blog")
+
 (ido-mode)
+
+(require 'fcitx)
+(setq fcitx-use-dbus t)
 
 (setq-default auto-save-timeout 15) ; 15秒无动作,自动保存
 (setq-default auto-save-interval 100) ; 100个字符间隔, 自动保存

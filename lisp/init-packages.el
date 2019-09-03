@@ -102,7 +102,7 @@
 			 citeproc
 			 xml-rpc
 			 org2blog
-                         )
+             fcitx)
   "Default packages")
 (setq package-selected-packages  yubao/packages) ;let package-autoremove know my customized packages, ohterwise package-autoremove will delete my customized packages
 

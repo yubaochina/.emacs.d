@@ -1,4 +1,4 @@
-
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-e") 'move-end-of-line)
 
 ;(global-set-key (kbd "C-c C-,") 'org-insert-structure-template)

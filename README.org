@@ -15,7 +15,7 @@ make
 make install
 #+end_example
 
-* Config File
+** Install from dotfile repo
 #+begin_example
 git clone --recursive git@github.com:yubaoliu/dotfiles.git
 #+end_example
@@ -32,8 +32,83 @@ Compile /org-mode/ after /git clone/:
 cd .emacs.d/packages/org-mode/
 make all
 #+end_example
+* Chinese Input Method
+1. /locale/
+#+begin_example
+$ locale
+LANG=en_US.UTF-8
+LANGUAGE=en_US
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC=ja_JP.UTF-8
+LC_TIME=ja_JP.UTF-8
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY=ja_JP.UTF-8
+LC_MESSAGES="en_US.UTF-8"
+LC_PAPER=ja_JP.UTF-8
+LC_NAME=ja_JP.UTF-8
+LC_ADDRESS=ja_JP.UTF-8
+LC_TELEPHONE=ja_JP.UTF-8
+LC_MEASUREMENT=ja_JP.UTF-8
+LC_IDENTIFICATION=ja_JP.UTF-8
+LC_ALL=
+#+end_example
+1. Add to =.bashrc=
+#+begin_example
+export LC_CTYPE=zh_CN.UTF-8
+#+end_example
+2. Modify start command
+#+begin_example
+rm /usr/bin/emacs24-x
+LC_CTYPE=zh_CN.UTF-8 /usr/bin/emacs-x $@
+#+end_example
+4. =~/.xinitrc=
+#+begin_example
+export LC_CTYPE="zh_CN.UTF-8"
 
+export XMODIFIERS='@im=fcitx'
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
+export GTK3_IM_MODULE=xim
 
+fcitx -d
+#+end_example
+5. =/etc/environment=
+#+begin_example
+export LC_CTYPE="zh_CN.UTF-8"
+sudo locale-gen
+reboot
+#+end_example
+* Emacs Lisp
+** Get Full Path of File Name
+#+begin_src lisp
+(defun insert-file-name ()
+  "Insert the full path file name into the current buffer."
+  (interactive)
+  (insert (buffer-file-name (window-buffer (minibuffer-selected-window)))))
+#+end_src
+
+#+begin_src lisp
+(defun filename ()   
+    "Copy the full path of the current buffer."  
+    (interactive)  
+    (kill-new (buffer-file-name (window-buffer (minibuffer-selected-window)))))
+#+end_src
+** Buffer Name
+[[https://www.gnu.org/software/emacs/manual/html_node/elisp/Buffer-Names.html][Buffer Names]]
+
+#+begin_src lisp
+    (buffer-name)
+               ⇒ "buffers.texi"
+          
+          (setq foo (get-buffer "temp"))
+               ⇒ #<buffer temp>
+          (kill-buffer foo)
+               ⇒ nil
+          (buffer-name foo)
+               ⇒ nil
+          foo
+               ⇒ #<killed buffer>
+#+end_src
 
 * Tutorial
 - Emacs Mini Manual: https://tuhdo.github.io/emacs-tutor.html

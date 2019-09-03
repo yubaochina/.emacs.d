@@ -1,5 +1,5 @@
 ;;https://orgmode.org/orgguide.pdf
-;(require 'org)
+										;(require 'org)
 (require 'ox-publish)
 (require 'org-tempo)
 (require 'xml-rpc)
@@ -50,7 +50,7 @@
 
 
 ;;-------uimage---------------------------------
-;https://github.com/lujun9972/uimage
+										;https://github.com/lujun9972/uimage
 ;;use C-c C-c to refresh the images
 (require 'uimage)
 (uimage-mode t)
@@ -74,116 +74,169 @@
 (require 'org2jekyll)
 
 (custom-set-variables '(org2jekyll-blog-author "Yubao Liu")
-                      '(org2jekyll-source-directory (expand-file-name "~/data/Project/yubaoliu.github.io"))
+                      '(org2jekyll-source-directory (expand-file-name "~/data/Project/blog"))
                       '(org2jekyll-jekyll-directory (expand-file-name "~/data/Project/yubaoliu.github.io"))
                       '(org2jekyll-jekyll-drafts-dir "_drafts/")
                       '(org2jekyll-jekyll-posts-dir "_posts/")
-		      )
+					  )
 
 (setq org-publish-project-alist
-                        `(("default"
-						   :with-latex t
-                           :base-directory "~/data/Project/yubaoliu.github.io/_drafts"
-                           :base-extension "org"
-                           :publishing-directory "~/data/Project/yubaoliu.github.io/_drafts"
-                           :publishing-function org-html-publish-to-html
-                           :headline-levels 4
-                           :section-numbers t
-                           :with-toc t
-                           :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>"
-                           :html-preamble t
-                           :recursive t
-                           :make-index t
-                           :html-extension "html"
-                           :body-only t
-   						   :auto-sitemap t
-						   :sitemap-filename "sitemap.org"
-						   :sitemap-title "sitemap"
-						   :sitemap-sort-folders "last"
-						   )
-			              ("post"
-                           :base-directory ,(org2jekyll-input-directory  org2jekyll-jekyll-drafts-dir)
-                           :base-extension "org"
-                           :publishing-directory ,(org2jekyll-output-directory org2jekyll-jekyll-posts-dir)
-                           :publishing-function org-html-publish-to-html
-                           :headline-levels 4
-                           :section-numbers t
-                           :with-toc t
-                           :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>"
-                           :html-preamble t
-                           :recursive t
-                           :make-index t
-                           :html-extension "html"
-                           :body-only t
-						   :with-date t
-						   :auto-preamble t
-						   :with-title t
-						   :with-author t
-						   :archived-trees t
-						   :with-clocks t
-						   :with-date t
-						   :with-email t
-						   :with-emphasize t
-						   :with-footnotes t
-						   :with-latex t
-						   :with-planning t
-						   :with-properties t
-						   :with-special-strings t
-						   :with-tables t
-						   :with-tags t
-						   :with-tasks t
-						   :with-timestamps t
-						   :with-todo-keywords t
-						   )
-                          ("images"
-                           :base-directory ,(org2jekyll-input-directory "img")
-                           :base-extension "jpg\\|gif\\|png"
-                           :publishing-directory ,(org2jekyll-output-directory "img")
-                           :publishing-function org-publish-attachment
-                           :recursive t)
-                          ("js"
-                           :base-directory ,(org2jekyll-input-directory "js")
-                           :base-extension "js"
-                           :publishing-directory ,(org2jekyll-output-directory "js")
-                           :publishing-function org-publish-attachment
-                           :recursive t)
-                          ("css"
-                           :base-directory ,(org2jekyll-input-directory "css")
-                           :base-extension "css\\|el"
-                           :publishing-directory ,(org2jekyll-output-directory "css")
-                           :publishing-function org-publish-attachment
-                           :recursive t)
-                          ("web" :components ("post" "images" "js" "css"))
-			  ))
+      `(("default"
+		 :with-latex t
+         :base-directory ,(org2jekyll-input-directory "org")
+         :base-extension "org"
+         :publishing-directory ,(org2jekyll-output-directory org2jekyll-jekyll-posts-dir)
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :section-numbers t
+         :with-toc nil
+         :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>"
+         :html-preamble t
+         :recursive t
+         :make-index t
+         :html-extension "html"
+         :body-only t
+   		 )
+		("post"
+         :base-directory ,(org2jekyll-input-directory "org")
+         :base-extension "org"
+         :publishing-directory ,(org2jekyll-output-directory org2jekyll-jekyll-posts-dir)
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :section-numbers t
+         :with-toc nil
+         :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>"
+         :html-preamble t
+         :recursive t
+         :make-index t
+         :html-extension "html"
+         :body-only t
+		 :with-date t
+		 :auto-preamble t
+		 :with-title t
+		 :with-author t
+		 :archived-trees t
+		 :with-clocks t
+		 :with-date t
+		 :with-email t
+		 :with-emphasize t
+		 :with-footnotes t
+		 :with-latex t
+		 :with-planning t
+		 :with-properties t
+		 :with-special-strings t
+		 :with-tables t
+		 :with-tags t
+		 :with-tasks t
+		 :with-timestamps nil
+		 :with-todo-keywords t
+		 )
+        ("images"
+         :base-directory ,(org2jekyll-input-directory "img")
+         :base-extension "jpg\\|gif\\|png"
+         :publishing-directory ,(org2jekyll-output-directory "img")
+         :publishing-function org-publish-attachment
+         :recursive t)
+        ("js"
+         :base-directory ,(org2jekyll-input-directory "js")
+         :base-extension "js"
+         :publishing-directory ,(org2jekyll-output-directory "js")
+         :publishing-function org-publish-attachment
+         :recursive t)
+        ("css"
+         :base-directory ,(org2jekyll-input-directory "css")
+         :base-extension "css\\|el"
+         :publishing-directory ,(org2jekyll-output-directory "css")
+         :publishing-function org-publish-attachment
+         :recursive t)
+        ("web" :components ( "images" "js" "css"))
+		("org-blog"
+         :base-directory "~/data/Project/blog/org"
+         :base-extension "org"
+         :publishing-directory "~/data/Project/blog/html"
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :section-numbers t
+         :with-toc t
+         :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>"
+         :html-preamble t
+         :recursive t
+         :make-index t
+         :html-extension "html"
+         :body-only t
+		 :with-date t
+		 :auto-preamble t
+		 :with-title t
+		 :with-author t
+		 :archived-trees t
+		 :with-clocks t
+		 :with-date t
+		 :with-email t
+		 :with-emphasize t
+		 :with-footnotes t
+		 :with-latex t
+		 :with-planning t
+		 :with-properties t
+		 :with-special-strings t
+		 :with-tables t
+		 :with-tags t
+		 :with-tasks t
+		 :with-timestamps nil
+		 :with-todo-keywords t
+		 :auto-sitemap t
+		 :sitemap-filename "sitemap.org"
+		 :sitemap-title "sitemap"
+		 :sitemap-sort-folders "last"
+		 )
+		))
+
+;;(setq org-publish-project-alist `())
 
 
-(defun yubao/insert-jekyll-template()
- (interactive)
-  (insert "#+STARTUP: showall indent
-#+STARTUP: hidestar
-#+OPTIONS: H:3 num:t tags:t toc:t timestamps:t
+(defun yubao/insert-jekyll-publish-template()
+  (interactive)
+  (insert "
+#+STARTUP: showall
+#+STARTUP: hidestars
 #+LAYOUT: post
-#+CATEGORIES: blog
-#+DATE: 2019-08-
-#+TITLE:
-#+DESCRIPTION:
-#+TAGS:
-#+OPTIONS: body-only:t"
-))
+#+AUTHOR: Yubao Liu
+#+CATEGORIES: default
+#+TITLE: 
+#+DESCRIPTION: post
+#+TOC: nil
+#+OPTIONS: H:2 num:t tags:t toc:nil timestamps:nil email:t date:t
+")
+  (insert "#+DATE: ")
+  (insert (format-time-string "%Y-%m-%d %a %H:%M:%S"))
+  (insert "\n#+EXPORT_FILE_NAME: ")
+  (insert (format-time-string "%Y-%m-%d-"))
+  (insert  (buffer-name))
+  (insert ".html")
+  (insert "#+TOC: headlines 3
+#+TOC: listings
+#+TOC: tables")
+  )
 
-(defun yubao/insert-publish-template()
- (interactive)
+
+(defun yubao/insert-org-publish-template()
+  (interactive)
   (insert "#+EXPORT_FILE_NAME: 
 #+TITLE: 
-#+DATE: 
 #+KEYWORDS: 
 #+SUBTITLE:
 #+TAGS:
-#+OPTIONS: H:3 num:t tags:t toc:t timestamps:t
-"))
-			
+#+OPTIONS: H:3 num:t tags:t toc:nil timestamps:t date:t arch:t email:t timestamp:t todo:t 
+")
+  (insert "#+DATE: ")
+  (insert (format-time-string "%Y-%m-%d %a %H:%M:%S"))
+  )
+
+(defun timestamp ()
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d %a %H:%M:%S")))
+
 (require 'org-page)
 (setq op/repository-directory "/Users/yubaoliu/Projects/homepage")
 (setq op/site-domain "https://github.com/yubaoliu/homepage")
- 
+
 (provide 'init-org)
