@@ -83,9 +83,9 @@
 (setq org-publish-project-alist
       `(("default"
 		 :with-latex t
-         :base-directory ,(org2jekyll-input-directory "org")
+         :base-directory ,(org2jekyll-input-directory "page")
          :base-extension "org"
-         :publishing-directory ,(org2jekyll-output-directory org2jekyll-jekyll-posts-dir)
+         :publishing-directory ,(org2jekyll-output-directory)
          :publishing-function org-html-publish-to-html
          :headline-levels 4
          :section-numbers t
@@ -157,7 +157,7 @@
          :publishing-function org-html-publish-to-html
          :headline-levels 4
          :section-numbers t
-         :with-toc t
+         :with-toc nil
          :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>"
          :html-preamble t
          :recursive t
@@ -188,23 +188,23 @@
 		 :sitemap-title "sitemap"
 		 :sitemap-sort-folders "last"
 		 )
-		))
+))
 
 ;;(setq org-publish-project-alist `())
 
 
-(defun yubao/insert-jekyll-publish-template()
+(defun yubao/insert-jekyll-post-template()
   (interactive)
-  (insert "
-#+STARTUP: showall
+  (insert "#+STARTUP: showall
 #+STARTUP: hidestars
 #+LAYOUT: post
 #+AUTHOR: Yubao Liu
 #+CATEGORIES: default
 #+TITLE: 
 #+DESCRIPTION: post
+#+TAGS: 
 #+TOC: nil
-#+OPTIONS: H:2 num:t tags:t toc:nil timestamps:nil email:t date:t
+#+OPTIONS: H:2 num:t tags:t toc:nil timestamps:nil email:t date:t body-only:t
 ")
   (insert "#+DATE: ")
   (insert (format-time-string "%Y-%m-%d %a %H:%M:%S"))
@@ -212,24 +212,30 @@
   (insert (format-time-string "%Y-%m-%d-"))
   (insert  (buffer-name))
   (insert ".html")
-  (insert "#+TOC: headlines 3
+  (insert "\n#+TOC: headlines 3
 #+TOC: listings
 #+TOC: tables")
   )
 
-
-(defun yubao/insert-org-publish-template()
-  (interactive)
-  (insert "#+EXPORT_FILE_NAME: 
-#+TITLE: 
+(defun yubao/insert-jekyll-page-template()
+(interactive)
+(insert "#+TITLE: 
 #+KEYWORDS: 
 #+SUBTITLE:
-#+TAGS:
-#+OPTIONS: H:3 num:t tags:t toc:nil timestamps:t date:t arch:t email:t timestamp:t todo:t 
+#+LAYOUT: default
+#+OPTIONS: H:3 num:t tags:t toc:nil timestamps:t date:t arch:t email:t timestamp:t todo:t body-only:nil
+#+PERMALINK: //
 ")
-  (insert "#+DATE: ")
-  (insert (format-time-string "%Y-%m-%d %a %H:%M:%S"))
-  )
+(insert "#+DATE: ")
+(insert (format-time-string "%Y-%m-%d %a %H:%M:%S"))
+(insert "\n#+EXPORT_FILE_NAME: ")
+(insert (format-time-string "%Y-%m-%d-"))
+(insert  (buffer-name))
+(insert ".html")
+(insert "\n#+TOC: headlines 3
+#+TOC: listings
+#+TOC: tables")
+)
 
 (defun timestamp ()
   (interactive)
