@@ -1,3 +1,10 @@
+* How to use
+- yubao/insert-bilibili-vedio
+- yubao/insert-timestamp
+- yubao/insert-jekyll-page-template
+- yubao/insert-jekyll-post-template
+- yubao/publish-jekyll-blog
+    
 * Installation
 ** Install from apt-get
 #+begin_src 

@@ -237,9 +237,22 @@
 #+TOC: tables")
 )
 
-(defun timestamp ()
+(defun yubao/insert-bilibili-vedio(address)
+  (interactive)
+  (insert "#+begin_export html
+<iframe width="640" height="480"  src=" address "  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+#+end_export")
+  )
+
+(defun yubao/insert-timestamp ()
   (interactive)
   (insert (format-time-string "%Y-%m-%d %a %H:%M:%S")))
+
+(defun yubao/publish-jekyll-blog()
+  (interactive)
+  (org2jekyll-publish-posts)
+  (org2jekyll-publish-pages)
+  )
 
 (require 'org-page)
 (setq op/repository-directory "/Users/yubaoliu/Projects/homepage")
