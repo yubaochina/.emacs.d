@@ -123,7 +123,7 @@
 		 :with-footnotes t
 		 :with-latex t
 		 :with-planning t
-		 :with-properties t
+		 :with-properties nil
 		 :with-special-strings t
 		 :with-tables t
 		 :with-tags t
@@ -237,10 +237,10 @@
 #+TOC: tables")
 )
 
-(defun yubao/insert-bilibili-vedio(address)
+(defun yubao/insert-bilibili-vedio()
   (interactive)
   (insert "#+begin_export html
-<iframe width="640" height="480"  src=" address "  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe width=\"640\" height=\"480\"  src=\"\"  scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"> </iframe>
 #+end_export")
   )
 
