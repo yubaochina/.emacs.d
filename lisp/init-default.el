@@ -1,5 +1,3 @@
-(cd "~/data/Project/blog")
-
 (ido-mode)
 
 (require 'fcitx)

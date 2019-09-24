@@ -150,44 +150,44 @@
          :publishing-function org-publish-attachment
          :recursive t)
         ("web" :components ( "images" "js" "css"))
-		("org-blog"
-         :base-directory "~/data/Project/blog/org"
-         :base-extension "org"
-         :publishing-directory "~/data/Project/blog/html"
-         :publishing-function org-html-publish-to-html
-         :headline-levels 4
-         :section-numbers t
-         :with-toc nil
-         :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>"
-         :html-preamble t
-         :recursive t
-         :make-index t
-         :html-extension "html"
-         :body-only t
-		 :with-date t
-		 :auto-preamble t
-		 :with-title t
-		 :with-author t
-		 :archived-trees t
-		 :with-clocks t
-		 :with-date t
-		 :with-email t
-		 :with-emphasize t
-		 :with-footnotes t
-		 :with-latex t
-		 :with-planning t
-		 :with-properties t
-		 :with-special-strings t
-		 :with-tables t
-		 :with-tags t
-		 :with-tasks t
-		 :with-timestamps nil
-		 :with-todo-keywords t
-		 :auto-sitemap t
-		 :sitemap-filename "sitemap.org"
-		 :sitemap-title "sitemap"
-		 :sitemap-sort-folders "last"
-		 )
+		;; ("org-blog"
+        ;;  :base-directory "~/data/Project/blog/org"
+        ;;  :base-extension "org"
+        ;;  :publishing-directory "~/data/Project/blog/html"
+        ;;  :publishing-function org-html-publish-to-html
+        ;;  :headline-levels 4
+        ;;  :section-numbers t
+        ;;  :with-toc nil
+        ;;  :html-head "<link rel=\"stylesheet\" href=\"./css/style.css\" type=\"text/css\"/>"
+        ;;  :html-preamble t
+        ;;  :recursive t
+        ;;  :make-index t
+        ;;  :html-extension "html"
+        ;;  :body-only t
+		;;  :with-date t
+		;;  :auto-preamble t
+		;;  :with-title t
+		;;  :with-author t
+		;;  :archived-trees t
+		;;  :with-clocks t
+		;;  :with-date t
+		;;  :with-email t
+		;;  :with-emphasize t
+		;;  :with-footnotes t
+		;;  :with-latex t
+		;;  :with-planning t
+		;;  :with-properties t
+		;;  :with-special-strings t
+		;;  :with-tables t
+		;;  :with-tags t
+		;;  :with-tasks t
+		;;  :with-timestamps nil
+		;;  :with-todo-keywords t
+		;;  :auto-sitemap t
+		;;  :sitemap-filename "sitemap.org"
+		;;  :sitemap-title "sitemap"
+		;;  :sitemap-sort-folders "last"
+;;		 )
 ))
 
 ;;(setq org-publish-project-alist `())
@@ -253,6 +253,27 @@
   (org2jekyll-publish-posts)
   (org2jekyll-publish-pages)
   )
+
+(defun org-custom-link-img-follow (path) 
+    (org-open-file
+    (format "../img/%s" path))) 
+
+(defun org-custom-link-img-export (path desc format) 
+    (cond 
+    ((eq format 'html) 
+    (format "<img src=\"/img/%s\" alt=\"%s\"/>" path desc)))) 
+
+(org-add-link-type "post" 'org-custom-link-img-follow 'org-custom-link-img-export) 
+
+;; (defun org-custom-link-post-follow (path) 
+;;     (org-open-file path)) 
+
+;; (defun org-custom-link-post-export (path desc format) 
+;;     (cond 
+;;     ((eq format 'html) 
+;;     (format "<a href=\"{%% post_url %s %%}\">%s</a>" path desc)))) 
+
+;; (org-add-link-type "post" 'org-custom-link-post-follow 'org-custom-link-post-export)
 
 (require 'org-page)
 (setq op/repository-directory "/Users/yubaoliu/Projects/homepage")
