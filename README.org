@@ -1,10 +1,11 @@
 * Introduction
 This project proposed a solution to publish Jekyll blog using Emacs ORG mode.
+
 Demo: https://yubaoliu.github.io/
 
 * Features
-- Insert Youtube Vedio
-- Insert Bilibili Vedio
+- Insert Youtube Video
+- Insert Bilibili Video
 - Insert Image and publish to jekyll website
 - Publish static resources: image, js, css ...
 - Insert Jekyll org template
@@ -32,7 +33,7 @@ https://github.com/yubaoliu/blog.git
 https://github.com/yubaoliu/yubaoliu.github.io.git
 #+end_example
 
-** Insert Bilibili vedio
+** Insert Bilibili video
 - yubao/insert-bilibili-vedio
 ** Insert timestamp
 - yubao/insert-timestamp
