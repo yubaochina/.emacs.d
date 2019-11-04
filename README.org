@@ -1,11 +1,21 @@
 * How to use
+** Insert Bilibili vedio
 - yubao/insert-bilibili-vedio
+** Insert timestamp
 - yubao/insert-timestamp
+** Insert post/page header
 - yubao/insert-jekyll-page-template
 - yubao/insert-jekyll-post-template
+** Publish blog
 - yubao/publish-jekyll-blog
-    
-* Installation
+** publish static resources
+- org-publish-blog web
+This will publish **image**, **js**, **css**
+** Insert Image
+#+begin_example
+[[post:imge.png]]
+#+end_example
+* Install Emacs (>25)
 ** Install from apt-get
 #+begin_src 
 sudo add-apt-repository -yu ppa:kelleyk/emacs
