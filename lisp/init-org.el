@@ -229,7 +229,6 @@
 (insert "#+DATE: ")
 (insert (format-time-string "%Y-%m-%d %a %H:%M:%S"))
 (insert "\n#+EXPORT_FILE_NAME: ")
-(insert (format-time-string "%Y-%m-%d-"))
 (insert  (buffer-name))
 (insert ".html")
 (insert "\n#+TOC: headlines 3
