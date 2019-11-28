@@ -165,6 +165,9 @@ reboot
                ⇒ #<killed buffer>
 #+end_src
 
+* Keybindings
+- mark: C-c C-SPC (Set C-SPC to Tmux)
+
 * Tutorial
 - Emacs Mini Manual: https://tuhdo.github.io/emacs-tutor.html
   
